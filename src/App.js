@@ -1,18 +1,20 @@
 import React, {Component} from 'react';
-import {HashRouter, Route, Link} from 'react-router-dom';
-import {Layout, Breadcrumb, Row, Col} from 'antd'
+import {HashRouter, Route} from 'react-router-dom';
+import {Layout, Row, Col,Icon,BackTop} from 'antd'
 
 import Home from './pages/Home';
 import About from './pages/About';
+import LoadMoreList from './pages/LoadMoreList';
 import List from './pages/List';
+
 import Mysql0 from './pages/Mysql0';
 import Mysql1 from './pages/Mysql1';
 import Mysql2 from './pages/Mysql2';
 import Redis from './pages/Redis';
 import Jdk8 from './pages/Jdk8';
 import ClassLoader from './pages/ClassLoader';
-import LoadMoreList from './pages/LoadMoreList';
-
+import Btree from './pages/Btree';
+import Oracle from './pages/Oracle';
 import Tomcat from './pages/Tomcat';
 
 
@@ -22,6 +24,12 @@ const {Content, Footer} = Layout
 
 class App extends Component {
     render() {
+        const IconText = ({ type, text }) => (
+            <span> <Icon type={type} style={{ marginRight: 8 }} />
+                {text}
+            </span>
+        );
+
         return (
             <div>
 
@@ -47,6 +55,8 @@ class App extends Component {
                                 <div>
                                     {/*<Route component={List} path="/list"/>*/}
                                     <Route component={About} path="/about"/>
+                                    <Route component={LoadMoreList} path="/list"/>
+
 
                                     <Route component={Mysql0} path="/mysql0"/>
                                     <Route component={Mysql1} path="/mysql1"/>
@@ -55,8 +65,8 @@ class App extends Component {
                                     <Route component={Jdk8} path="/jdk8"/>
                                     <Route component={ClassLoader} path="/classLoader"/>
                                     <Route component={Tomcat} path="/tomcat"/>
-                                    <Route component={LoadMoreList} path="/list"/>
-
+                                    <Route component={Btree} path="/btree"/>
+                                    <Route component={Oracle} path="/oracle"/>
 
 
 
@@ -75,11 +85,15 @@ class App extends Component {
                 <Row>
                     <Col span={16} offset={4}>
                         <Footer className="text-center">
-                            <a href='https://github.com/nick8sky'>github</a>  <a href='http://blog.csdn.net/llianlianpay/'>csdn</a><br/>
+                            <a href='https://github.com/nick8sky'><IconText type="github" text=""/></a>  <a href='http://blog.csdn.net/llianlianpay/'>csdn</a><br/>
                             ©2018 copyright by nick
                         </Footer>
                     </Col>
                 </Row>
+
+                <div>
+                    <BackTop/>
+                </div>
 
             </div>
         )

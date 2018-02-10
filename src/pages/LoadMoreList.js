@@ -1,49 +1,70 @@
-import {List, Button, Spin,Icon} from 'antd';
+import {List, Button, Spin,Icon,Rate} from 'antd';
 import React from 'react';
 import {Link} from 'react-router-dom';
 
 
 const data = [
     {
-        "title": "mysql",
+        "title": "[数据库]oracle",
+        "description": "暂无",
+        "url": "oracle",
+        "mi": 2.5,
+        "updateTime": "2018-02-10"
+    },
+    {
+        "title": "[数据结构]B树",
+        "description": "暂无",
+        "url": "btree",
+        "mi": 3.5,
+        "updateTime": "2018-02-10"
+    },
+    {
+        "title": "[数据库]mysql",
         "description": "mysql技术内幕.innoDB存储引擎.第二版，表的载体是文件系统，数据先写缓存再2次写入到文件，重做日志，二进制文件，检查点，索引，mvvc,acid...",
         "url": "mysql0",
+        "mi": 3,
         "updateTime": "2018-02-08"
     },
     {
-        "title": "mysql",
+        "title": "[数据库]mysql",
         "description": "mysql运维内参，mysql基本使用，主从热备，HA,运维sql",
         "url": "mysql1",
+        "mi": 2.5,
         "updateTime": "2018-02-08"
     },
     {
-        "title": "mysql",
+        "title": "[数据库]mysql",
         "description": "mysql的double write",
         "url": "mysql2",
+        "mi": 4,
         "updateTime": "2018-02-08"
     },
     {
-        "title": "redis",
+        "title": "[数据库]redis",
         "description": "redis基本数据类型，事务，分布式锁，哨兵，集群模式",
         "url": "redis",
+        "mi": 3,
         "updateTime": "2018-02-08"
     },
     {
-        "title": "jdk8",
+        "title": "[JAVA]jdk8",
         "description": "jdk8的lambda表达式、stream api",
         "url": "jdk8",
+        "mi": 3.5,
         "updateTime": "2018-02-07"
     },
     {
-        "title": "类加载",
+        "title": "[JAVA]类加载",
         "description": "类加载，双亲委派模型，自定义类加载器",
         "url": "classLoader",
+        "mi": 1.5,
         "updateTime": "2018-02-07"
     },
     {
-        "title": "tomcat",
+        "title": "[JAVA]tomcat",
         "description": "tomcat类容器隔离与热部署",
         "url": "tomcat",
+        "mi": 2,
         "updateTime": "2018-02-06"
     }
 
@@ -60,6 +81,7 @@ class LoadMoreList extends React.Component {
     }
 
     pigeNum = 1;
+
     componentDidMount() {
         this.getData((results) => {
             this.setState({
@@ -71,7 +93,7 @@ class LoadMoreList extends React.Component {
 
     async getData(callback) {
         /*const {results} = await fetch(`https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo`).then(response => response.json())*/
-        const pageSize = 8;
+        const pageSize = 7;
         let arr = [];
         let lastIndex = this.pigeNum * pageSize;
 
@@ -83,6 +105,7 @@ class LoadMoreList extends React.Component {
             arr.push(data[j])
         }
 
+        callback(arr)
         this.pigeNum = this.pigeNum + 1
 
     }
@@ -106,10 +129,10 @@ class LoadMoreList extends React.Component {
 
 
     render() {
-        const IconText = ({type, text}) => (
-            <span> <Icon type={type} style={{marginRight: 8}}/>
+        const IconText = ({ type, text }) => (
+            <span> <Icon type={type} style={{ marginRight: 8 }} />
                 {text}
-        </span>
+            </span>
         );
         const {loading, loadingMore, showLoadingMore, data} = this.state;
         const loadMore = showLoadingMore ? (
@@ -129,11 +152,14 @@ class LoadMoreList extends React.Component {
                     <List.Item >
                         <List.Item.Meta
                             title={
-                                <span> <Link to={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></Link><span style={{float:'right'}}>{item.updateTime}</span></span>
+                                 <Link to={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></Link>
                             }
-                            description={item.description }
+                            description={
+                                <span>{item.description }<br/><Rate allowHalf defaultValue={item.mi} />&nbsp;&nbsp;&nbsp;&nbsp;|<IconText type="calendar" text={item.updateTime} /> </span>
+                                }
                         />
                     </List.Item>
+
                 )}
             />
         );
