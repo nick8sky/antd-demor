@@ -30,7 +30,7 @@ const data = [
     },
     {
         "title": "jdk8",
-        "jdk8": "jdk8的lambda表达式、stream api",
+        "description": "jdk8的lambda表达式、stream api",
         "url": "jdk8",
         "updateTime": "2018-02-07"
     },
@@ -60,7 +60,6 @@ class LoadMoreList extends React.Component {
     }
 
     pigeNum = 1;
-
     componentDidMount() {
         this.getData((results) => {
             this.setState({
@@ -75,9 +74,7 @@ class LoadMoreList extends React.Component {
         const pageSize = 8;
         let arr = [];
         let lastIndex = this.pigeNum * pageSize;
-        console.log(data[2])
-        console.log(this.pigeNum)
-        console.log(data[lastIndex - 1])
+
         if (this.pigeNum * pageSize >= data.length) {
             lastIndex = data.length;
         }
@@ -85,8 +82,7 @@ class LoadMoreList extends React.Component {
         for (let j = (this.pigeNum - 1) * pageSize; j < lastIndex; j += 1) {
             arr.push(data[j])
         }
-        console.log(arr)
-        callback(arr)
+
         this.pigeNum = this.pigeNum + 1
 
     }
