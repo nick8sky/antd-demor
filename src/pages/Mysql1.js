@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Mysql extends Component {
+class Mysql1 extends Component {
     render() {
         return (
             <div>
@@ -145,4 +145,4 @@ class Mysql extends Component {
     }
 }
 
-export default Mysql;
+export default Mysql1;

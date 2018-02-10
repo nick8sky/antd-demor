@@ -11,12 +11,14 @@ import Mysql2 from './pages/Mysql2';
 import Redis from './pages/Redis';
 import Jdk8 from './pages/Jdk8';
 import ClassLoader from './pages/ClassLoader';
+import LoadMoreList from './pages/LoadMoreList';
+
 import Tomcat from './pages/Tomcat';
 
 
 import './App.css';
 
-const {Sider, Content, Footer} = Layout
+const {Content, Footer} = Layout
 
 class App extends Component {
     render() {
@@ -43,7 +45,7 @@ class App extends Component {
                         }}>
                             <HashRouter>
                                 <div>
-                                    <Route component={List} path="/list"/>
+                                    {/*<Route component={List} path="/list"/>*/}
                                     <Route component={About} path="/about"/>
 
                                     <Route component={Mysql0} path="/mysql0"/>
@@ -53,7 +55,7 @@ class App extends Component {
                                     <Route component={Jdk8} path="/jdk8"/>
                                     <Route component={ClassLoader} path="/classLoader"/>
                                     <Route component={Tomcat} path="/tomcat"/>
-
+                                    <Route component={LoadMoreList} path="/list"/>
 
 
 
@@ -73,7 +75,7 @@ class App extends Component {
                 <Row>
                     <Col span={16} offset={4}>
                         <Footer className="text-center">
-                            <a href={{url:'http://www.baidu.com'}}>github</a>  <a href={{url:'http://www.baidu.com'}}>csdn</a><br/>
+                            <a href='https://github.com/nick8sky'>github</a>  <a href='http://blog.csdn.net/llianlianpay/'>csdn</a><br/>
                             ©2018 copyright by nick
                         </Footer>
                     </Col>

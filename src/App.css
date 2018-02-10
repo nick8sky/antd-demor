@@ -28,3 +28,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.text-center{
+  text-align: center !important;
+}
+
+.ant-layout-footer {
+  background: transparent;
+}
+
+.ant-list-item-meta {
+  /* flex: 1 1; */
+}
