@@ -9,7 +9,7 @@ class About extends Component {
         return (
             <div>
                 <p>发邮件给我 <Icon type="mail" style={{ marginRight: 8 }} />nick070809@163.com</p>
-                <p>坐     标 <Icon type="compass" style={{ marginRight: 8 }} />杭州.中国</p>
+                <p>坐     标 <Icon type="compass" style={{ marginRight: 8 }} />杭州·中国</p>
                 <p>能     力 <Icon type="dashboard" style={{ marginRight: 8 }} />java /python /scala /mysql /oracle /react</p>
                 <p><br/>&nbsp;&nbsp;&nbsp;&nbsp;
                     pay attention to your thoughts,because it becomes rhetoric;   注意你的思想,因为它将变成言辞; <br/>&nbsp;&nbsp;&nbsp;&nbsp;

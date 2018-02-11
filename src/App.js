@@ -13,11 +13,18 @@ import Mysql2 from './pages/Mysql2';
 import Redis from './pages/Redis';
 import Jdk8 from './pages/Jdk8';
 import ClassLoader from './pages/ClassLoader';
+import Oracle from './pages/Oracle';
+import Tomcat from './pages/Tomcat';
+
+//数据结构
+import HashTable from './pages/HashTable';
+import ConsistencyHash from './pages/ConsistencyHash';
+import ComplexityAnalysis from './pages/ComplexityAnalysis';
 import Btree1 from './pages/Btree1';
 import Btree from './pages/Btree';
 import Tree from './pages/Tree';
-import Oracle from './pages/Oracle';
-import Tomcat from './pages/Tomcat';
+import LineTable from './pages/LineTable';
+import Graph from './pages/Graph';
 
 
 import './App.css';
@@ -67,10 +74,19 @@ class App extends Component {
                                     <Route component={Jdk8} path="/jdk8"/>
                                     <Route component={ClassLoader} path="/classLoader"/>
                                     <Route component={Tomcat} path="/tomcat"/>
+                                    <Route component={Oracle} path="/oracle"/>
+                                    {/*数据结构*/}
                                     <Route component={Btree} path="/btree"/>
                                     <Route component={Btree1} path="/btree1"/>
                                     <Route component={Tree} path="/tree"/>
-                                    <Route component={Oracle} path="/oracle"/>
+                                    <Route component={HashTable} path="/hashTable"/>
+                                    <Route component={ConsistencyHash} path="/consistencyHash"/>
+                                    <Route component={ComplexityAnalysis} path="/complexityAnalysis"/>
+                                    <Route component={LineTable} path="/lineTable"/>
+                                    <Route component={Graph} path="/graph"/>
+
+                                    {/*数据结构*/}
+
 
 
                                     {/*---------------------------------------*/}
