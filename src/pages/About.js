@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Icon} from 'antd'
 
 
 
@@ -7,7 +8,17 @@ class About extends Component {
     render() {
         return (
             <div>
-                <p>about nick</p>
+                <p>发邮件给我 <Icon type="mail" style={{ marginRight: 8 }} />nick070809@163.com</p>
+                <p>坐     标 <Icon type="compass" style={{ marginRight: 8 }} />杭州.中国</p>
+                <p>能     力 <Icon type="dashboard" style={{ marginRight: 8 }} />java /python /scala /mysql /oracle /react</p>
+                <p><br/>&nbsp;&nbsp;&nbsp;&nbsp;
+                    pay attention to your thoughts,because it becomes rhetoric;   注意你的思想,因为它将变成言辞; <br/>&nbsp;&nbsp;&nbsp;&nbsp;
+                    attention to your words,because it into action;   注意你的言辞,因为它将变成行动; <br/>&nbsp;&nbsp;&nbsp;&nbsp;
+                    attention to your actions,because it will become a habit;   注意你的行动,因为它将变成习惯; <br/>&nbsp;&nbsp;&nbsp;&nbsp;
+                    attention to your habits,because it becomes the character;   注意你的习惯,因为它将变成性格; <br/>&nbsp;&nbsp;&nbsp;&nbsp;
+                    pay attention to you character,because it will determine your destiny.   注意你的性格,因为它将决定你的命运。</p>
+                <span style={{float:"right"}}> -Margaret Thatcher 玛格丽特·撒切尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
             </div>
         );
     }

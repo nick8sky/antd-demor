@@ -13,7 +13,9 @@ import Mysql2 from './pages/Mysql2';
 import Redis from './pages/Redis';
 import Jdk8 from './pages/Jdk8';
 import ClassLoader from './pages/ClassLoader';
+import Btree1 from './pages/Btree1';
 import Btree from './pages/Btree';
+import Tree from './pages/Tree';
 import Oracle from './pages/Oracle';
 import Tomcat from './pages/Tomcat';
 
@@ -56,7 +58,7 @@ class App extends Component {
                                     {/*<Route component={List} path="/list"/>*/}
                                     <Route component={About} path="/about"/>
                                     <Route component={LoadMoreList} path="/list"/>
-
+                                    {/*---------------------------------------*/}
 
                                     <Route component={Mysql0} path="/mysql0"/>
                                     <Route component={Mysql1} path="/mysql1"/>
@@ -66,15 +68,12 @@ class App extends Component {
                                     <Route component={ClassLoader} path="/classLoader"/>
                                     <Route component={Tomcat} path="/tomcat"/>
                                     <Route component={Btree} path="/btree"/>
+                                    <Route component={Btree1} path="/btree1"/>
+                                    <Route component={Tree} path="/tree"/>
                                     <Route component={Oracle} path="/oracle"/>
 
 
-
-
-
-
-
-
+                                    {/*---------------------------------------*/}
                                 </div>
                             </HashRouter>
                         </Content>
@@ -85,7 +84,7 @@ class App extends Component {
                 <Row>
                     <Col span={16} offset={4}>
                         <Footer className="text-center">
-                            <a href='https://github.com/nick8sky'><IconText type="github" text=""/></a>  <a href='http://blog.csdn.net/llianlianpay/'>csdn</a><br/>
+                            <a href='https://github.com/nick8sky'><Icon type="github" style={{ marginRight: 8 }} /></a>  <a href='http://blog.csdn.net/llianlianpay/'>csdn</a><br/>
                             ©2018 copyright by nick
                         </Footer>
                     </Col>

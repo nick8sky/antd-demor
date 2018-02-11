@@ -4,6 +4,28 @@ import {Link} from 'react-router-dom';
 
 
 const data = [
+
+    {
+        "title": "[数据结构]树",
+        "description": "数据结构中有很多树的结构，其中包括二叉树、二叉搜索树、2-3树、红黑树等等",
+        "url": "tree",
+        "mi": 3.0,
+        "updateTime": "2018-02-11"
+    },
+    {
+        "title": "[数据结构]B树",
+        "description": "B-tree，即为B树。因为B树的原英文名称为B-tree，而国内很多人喜欢把B-tree译作B-树，其实，这是个非常不好的直译，很容易让人产生误解。如人们可能会以为B-树是一种树，而B树又是一种一种树。而事实上是，B-tree就是指的B树。",
+        "url": "btree",
+        "mi": 2.0,
+        "updateTime": "2018-02-10"
+    },
+    {
+        "title": "[数据结构]B+树",
+        "description": "B+树和二叉树、平衡二叉树一样，都是经典的数据结构。B+树由B树和索引顺序访问方法演化而来，但是在实际使用过程中几乎已经没有使用B树的情况了。",
+        "url": "btree1",
+        "mi": 3.5,
+        "updateTime": "2018-02-10"
+    },
     {
         "title": "[数据库]oracle",
         "description": "暂无",
@@ -12,15 +34,8 @@ const data = [
         "updateTime": "2018-02-10"
     },
     {
-        "title": "[数据结构]B树",
-        "description": "暂无",
-        "url": "btree",
-        "mi": 3.5,
-        "updateTime": "2018-02-10"
-    },
-    {
         "title": "[数据库]mysql",
-        "description": "mysql技术内幕.innoDB存储引擎.第二版，表的载体是文件系统，数据先写缓存再2次写入到文件，重做日志，二进制文件，检查点，索引，mvvc,acid...",
+        "description": "mysql技术内幕.innoDB存储引擎，表的载体是文件系统，数据先写缓存再2次写入到文件，重做日志，二进制文件，检查点，索引，mvvc,acid...",
         "url": "mysql0",
         "mi": 3,
         "updateTime": "2018-02-08"
