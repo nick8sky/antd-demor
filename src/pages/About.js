@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Icon} from 'antd'
+import {Icon,Timeline} from 'antd'
 
 
 
@@ -11,7 +11,14 @@ class About extends Component {
                 <p>发邮件给我 <Icon type="mail" style={{ marginRight: 8 }} />nick070809@163.com</p>
                 <p>坐     标 <Icon type="compass" style={{ marginRight: 8 }} />杭州·中国</p>
                 <p>能     力 <Icon type="dashboard" style={{ marginRight: 8 }} />java /python /scala /mysql /oracle /react</p>
-                <p><br/>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <p>&nbsp;</p><p>&nbsp;</p>
+                <Timeline>
+                    <Timeline.Item color="green">杭州-2016</Timeline.Item>
+                    <Timeline.Item color="green">重庆-2012</Timeline.Item>
+                    <Timeline.Item color="green">福州-2010</Timeline.Item>
+                </Timeline>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;
                     pay attention to your thoughts,because it becomes rhetoric;   注意你的思想,因为它将变成言辞; <br/>&nbsp;&nbsp;&nbsp;&nbsp;
                     attention to your words,because it into action;   注意你的言辞,因为它将变成行动; <br/>&nbsp;&nbsp;&nbsp;&nbsp;
                     attention to your actions,because it will become a habit;   注意你的行动,因为它将变成习惯; <br/>&nbsp;&nbsp;&nbsp;&nbsp;

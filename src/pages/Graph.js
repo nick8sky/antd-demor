@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-import { Input } from 'antd';
 
 
 
 class Graph extends Component {
     render() {
-        const  iii =  "iiii{\ndddd\ndddn\n}";
+
 
         return (
             <div>
@@ -34,7 +33,7 @@ class Graph extends Component {
                 <p><img src={require('../img/261416556561787.png')} /></p>
                 <p>有向图的邻接矩阵：有向图中讲究入度和出度</p>
                 <p><img src={require('../img/261417023593435.png')} /></p>
-                <p>这里的∞表示不是很准确，在有些图中，初度为6的用-6表示，入度为9用9表示，没有关系的用0.</p>
+                <p>这里的∞表示不是很准确，在有些图中，出度为6用-6表示，入度为9用+9表示，没有关系的用0.</p>
                 <h5>2、邻接表</h5>
                 <h5>3、十字链表</h5>
                 <h5>4、邻接多重表</h5>
