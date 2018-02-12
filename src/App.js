@@ -1,47 +1,124 @@
 import React, {Component} from 'react';
 import {HashRouter, Route} from 'react-router-dom';
 import {Layout, Row, Col,Icon,BackTop} from 'antd'
+//import {Layout, Row, Col,Icon,BackTop} from 'bundle-loader'
+
 
 import Title from './html/Title';
 import Home from './html/Home';
 import About from './pages/About';
 import LoadMoreList from './pages/LoadMoreList';
 import List from './pages/List';
-
-//数据库
-import Mysql0 from './pages/Mysql0';
-import Mysql1 from './pages/Mysql1';
-import Mysql2 from './pages/Mysql2';
-import Redis from './pages/Redis';
-import Oracle from './pages/Oracle';
-
-
-//java
-import Jdk8 from './pages/Jdk8';
-import Tomcat from './pages/Tomcat';
-import ClassLoader from './pages/ClassLoader';
-import DevUtils from './pages/DevUtils';
-
-
-//数据结构
-import HashTable from './pages/HashTable';
-import ConsistencyHash from './pages/ConsistencyHash';
-import ComplexityAnalysis from './pages/ComplexityAnalysis';
-import Btree1 from './pages/Btree1';
-import Btree from './pages/Btree';
-import Tree from './pages/Tree';
-import LineTable from './pages/LineTable';
-import Graph from './pages/Graph';
-
-//机器学习
-import Matrix from './pages/Matrix';
-
-
-import Re from './html/Git';
+//Bundle
+import Bundle from './component/Bundle';
 
 import './App.css';
 
 const {Content, Footer} = Layout
+
+//数据库
+const Mysql0 = (props) => (
+    <Bundle load={() => import('./pages/Mysql0')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Mysql1 = (props) => (
+    <Bundle load={() => import('./pages/Mysql1')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Mysql2 = (props) => (
+    <Bundle load={() => import('./pages/Mysql2')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Redis = (props) => (
+    <Bundle load={() => import('./pages/Redis')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Oracle = (props) => (
+    <Bundle load={() => import('./pages/Oracle')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+
+
+//java
+const Jdk8 = (props) => (
+    <Bundle load={() => import('./pages/Jdk8')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Tomcat = (props) => (
+    <Bundle load={() => import('./pages/Tomcat')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const ClassLoader = (props) => (
+    <Bundle load={() => import('./pages/ClassLoader')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const DevUtils = (props) => (
+    <Bundle load={() => import('./pages/DevUtils')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+
+
+//数据结构
+const HashTable = (props) => (
+    <Bundle load={() => import('./pages/HashTable')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const ConsistencyHash = (props) => (
+    <Bundle load={() => import('./pages/ConsistencyHash')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const ComplexityAnalysis = (props) => (
+    <Bundle load={() => import('./pages/ComplexityAnalysis')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Btree1 = (props) => (
+    <Bundle load={() => import('./pages/Btree1')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Btree = (props) => (
+    <Bundle load={() => import('./pages/Btree')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Tree = (props) => (
+    <Bundle load={() => import('./pages/Tree')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const LineTable = (props) => (
+    <Bundle load={() => import('./pages/LineTable')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Graph = (props) => (
+    <Bundle load={() => import('./pages/Graph')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+//机器学习
+const Matrix = (props) => (
+    <Bundle load={() => import('./pages/Matrix')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+
+
+
+
+
 
 class App extends Component {
     render() {
@@ -96,11 +173,12 @@ class App extends Component {
 
 
                                     {/*java*/}
-                                    <Route component={Jdk8} path="/jdk8"/>
-                                    <Route component={ClassLoader} path="/classLoader"/>
-                                    <Route component={Tomcat} path="/tomcat"/>
-                                    <Route component={DevUtils} path="/devUtils"/>
+                                    <Route component={Jdk8} exact strict path="/jdk8"/>
+                                    <Route component={ClassLoader} exact strict path="/classLoader"/>
+                                    <Route component={Tomcat} exact strict path="/tomcat"/>
+                                    <Route component={DevUtils} exact strict path="/devUtils"/>
 
+                                    {/*test*/}
 
                                     {/*---------------------------------------*/}
                                 </div>
