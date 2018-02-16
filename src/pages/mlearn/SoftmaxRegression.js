@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
 
-
-
-
-class Matrix extends Component {
+class Mlearning6 extends Component {
     render() {
-
-
         return (
             <div>
-                f
-
-
+                <h2>多分类回归</h2>
             </div>
         );
     }
 }
 
-export default Matrix;
+export default Mlearning6;

@@ -24,8 +24,8 @@ class About extends Component {
                     attention to your actions,because it will become a habit;   注意你的行动,因为它将变成习惯; <br/>&nbsp;&nbsp;&nbsp;&nbsp;
                     attention to your habits,because it becomes the character;   注意你的习惯,因为它将变成性格; <br/>&nbsp;&nbsp;&nbsp;&nbsp;
                     pay attention to you character,because it will determine your destiny.   注意你的性格,因为它将决定你的命运。</p>
-                <span style={{float:"right"}}> -Margaret Thatcher 玛格丽特·撒切尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-
+                <span style={{float:"right"}}> -Margaret Thatcher 玛格丽特·撒切尔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <p>&nbsp;</p><p>&nbsp;</p>
             </div>
         );
     }

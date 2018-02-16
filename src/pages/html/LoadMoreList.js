@@ -5,24 +5,86 @@ import {Link} from 'react-router-dom';
 
 
 const data = [
-
     {
-        "title": "日常开发工具合集",
-        "description": "日常开发工具合集",
-        "url": "devUtils",
-        "mi": 1,
+        "title": "分类算法(二)多分类回归",
+        "description": "softmax回归",
+        "url": "mlearning6",
+        "mi": 2.0,
         "typeColor": "cyan",
-        "typeName": "JAVA",
-        "updateTime": "2018-02-12"
+        "typeName": "机器学习",
+        "updateTime": "2018-02-15"
     },
     {
-        "title": "矩阵",
-        "description": "线性代数不仅仅是一门数学学科，更是一门哲学，是一门描述世界的通用语言，我们应该很好的运用它",
-        "url": "matrix",
+        "title": "分类算法(一)逻辑回归",
+        "description": "线性回归能对连续值结果进行预测，而现实生活中常见的另外一类问题是，分类问题。最简单的情况是是与否的二分类问题。比如说医生需要判断病人是否生病，银行要判断一个人的信用程度是否达到可以给他发信用卡的程度，邮件收件箱要自动对邮件分类为正常邮件和垃圾邮件等等。",
+        "url": "mlearning5",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-14"
+    },
+    {
+        "title": "《人类简史》",
+        "description": "简要笔记",
+        "url": "peopleh",
+        "mi": 1.5,
+        "typeColor": "cyan",
+        "typeName": "社会",
+        "updateTime": "2018-02-15"
+    },
+    {
+        "title": "回归算法(一)",
+        "description": "线性回归,一般来说，样本和标签有着连续的取值，目标值不在一个固定的范围，与分类问题的主要区别；常用于预测房价，产值等",
+        "url": "mlearning3",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-14"
+    },
+    {
+        "title": "机器学习理论基础(三)",
+        "description": "感知机（PLA）算法",
+        "url": "mlearning2",
+        "mi": 1.5,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-13"
+    },
+    {
+        "title": "机器学习理论基础(二)",
+        "description": "什么是vc维",
+        "url": "mlearning1",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-13"
+    },
+    {
+        "title": "机器学习理论基础(一)",
+        "description": "机器学习有什么理论去支撑它是可行的？",
+        "url": "mlearning0",
         "mi": 3.0,
         "typeColor": "cyan",
         "typeName": "机器学习",
+        "updateTime": "2018-02-13"
+    },
+    {
+        "title": "矩阵",
+        "description": "线性代数不仅仅是一门数学学科，更是一门哲学，是一门描述世界的通用语言，我们应该很好的运用它;计算的目的不在于数字本身，而在于洞察其背后的意义。",
+        "url": "matrix",
+        "mi": 3.5,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
         "updateTime": "2018-02-11"
+    },
+    {
+        "title": "有效沟通",
+        "description": "每周和我们打交道最多的是周围的同事，如何和他们很好的沟通，以及延伸到家庭，生活中；",
+        "url": "dyh",
+        "mi": 4.5,
+        "typeColor": "cyan",
+        "typeName": "社会",
+        "updateTime": "2018-02-12"
     },
     {
         "title": "链表",
@@ -167,6 +229,14 @@ const data = [
         "typeColor": "cyan",
         "typeName": "JAVA",
         "updateTime": "2018-02-06"
+    }, {
+        "title": "日常开发工具合集",
+        "description": "日常开发工具合集",
+        "url": "devUtils",
+        "mi": 1,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-02-12"
     }
 
 
@@ -179,6 +249,7 @@ class LoadMoreList extends React.Component {
         loadingMore: false,
         showLoadingMore: true,
         remaining :0,
+        total :0,
         data: [],
     }
 
@@ -196,7 +267,7 @@ class LoadMoreList extends React.Component {
 
     async getData(callback) {
         /*const {results} = await fetch(`https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo`).then(response => response.json())*/
-        const pageSize = 7;
+        const pageSize = 10;
         let arr = [];
         let lastIndex = this.pigeNum * pageSize;
 
@@ -206,6 +277,7 @@ class LoadMoreList extends React.Component {
         this.remaining = data.length - lastIndex ;
         this.setState({
             remaining: data.length - lastIndex ,
+            total:data.length,
         });
 
         for (let j = (this.pigeNum - 1) * pageSize; j < lastIndex; j += 1) {
@@ -242,11 +314,11 @@ class LoadMoreList extends React.Component {
             </span>
         );
 
-        const {loading, loadingMore, showLoadingMore, data,remaining} = this.state;
+        const {loading, loadingMore, showLoadingMore, data,remaining,total} = this.state;
         const loadMore = showLoadingMore ? (
             <div style={{textAlign: 'center', marginTop: 12, height: 32, lineHeight: '32px'}}>
                 {loadingMore && <Spin/>}
-                {!loadingMore && <Button onClick={this.onLoadMore}>  loading more,remaining {remaining}  </Button>}
+                {!loadingMore && <Button onClick={this.onLoadMore}>  loading more, total {total} remaining {remaining}  </Button>}
             </div>
         ) : null;
         return (
@@ -260,7 +332,10 @@ class LoadMoreList extends React.Component {
                     <List.Item >
                         <List.Item.Meta
                             title={
+                                <span>
+
                                  <Link to={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></Link>
+                                </span>
                             }
                             description={
                                 <span>{item.description }<p></p><Tag>{item.typeName}</Tag><Rate allowHalf defaultValue={item.mi} />|<IconText type="calendar" text={item.updateTime} />

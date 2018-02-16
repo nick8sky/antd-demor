@@ -41,3 +41,10 @@
   /* flex: 1 1; */
 }
 
+/*
+.ant-row {
+  background-color: #b7b6a740;
+}*/
+.ant-col-16 {
+  background-color: white;
+}

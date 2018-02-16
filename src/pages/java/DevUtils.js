@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Collapse} from 'antd';
-import Git from '../html/Git';
-import Maven from '../html/Maven';
-import Linux from '../html/Linux';
-import React1 from '../html/React1';
+import Git from './Git';
+import Maven from './Maven';
+import Linux from './Linux';
+import React1 from './React1';
 
 
 const Panel = Collapse.Panel;

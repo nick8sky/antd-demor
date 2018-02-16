@@ -7,7 +7,7 @@ class Btree1 extends Component {
                 <h2>B+树</h2>
                 <p>	B+树是为磁盘或其他直接存取辅助设备而设计的一种平衡查找树，在B+树中，所有记录节点都是按键值的大小顺序存放在同一层的叶节点中，各叶节点指针进行连接。</p>
                 <p>&nbsp;</p>
-                <p><img src={require('../img/990532-20170117134342692-774752969.png')} /></p>
+                <p><img src={require('../../img/990532-20170117134342692-774752969.png')} /></p>
                 <p><strong>B+</strong>树是对B树的一种变形树，它与B树的差异在于：</p>
                 <ul>
                     <li><p>有k个子结点的结点必然有k个关键码；</p>
@@ -28,7 +28,7 @@ class Btree1 extends Component {
 
                 </ul>
                 <p>B 树和B+树的区别图：</p>
-                <p><img src={require('../img/290050088914733.png')} /></p>
+                <p><img src={require('../../img/290050088914733.png')} /></p>
                 <p>B/B+树也经常用做数据库的索引，在mysql的索引原理详细讲解。</p>
 
 
