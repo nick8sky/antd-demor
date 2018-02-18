@@ -5,9 +5,128 @@ import {Link} from 'react-router-dom';
 
 
 const data = [
+
+    {
+        "title": "[转]架构师之路：一个架构师需要掌握的知识技能",
+        "description": "没有射鸡师的思想，你就不能成为一名架构师。",
+        "url": "c3",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "onway",
+        "updateTime": "2018-02-18"
+    },
+    {
+        "title": "做 CTO，需要注意什么？",
+        "description": "善于带团队是一门高难度的艺术——要能把握开发进度；要能照顾开发团队成员，带领大家一同进步；要能对接好产品、运营、商务、当然还有自己的组员和boss。",
+        "url": "c2",
+        "mi": 3.0,
+        "typeColor": "cyan",
+        "typeName": "onway",
+        "updateTime": "2018-02-18"
+    },
+    {
+        "title": "我承认，我是被我的CTO害死的",
+        "description": "一个理想的创业公司，3个合伙人，应该是百度的技术，阿里的运营和腾讯的产品。",
+        "url": "c1",
+        "mi": 2.5,
+        "typeColor": "cyan",
+        "typeName": "onway",
+        "updateTime": "2018-02-18"
+    },
+    {
+        "title": "想和你说晚安",
+        "description": "和你的每一句话都想有温度。",
+        "url": "goodnight",
+        "mi": 2.5,
+        "typeColor": "cyan",
+        "typeName": "生活",
+        "updateTime": "2018-02-17"
+    },
+    {
+        "title": "推荐算法(一)协同过滤算法",
+        "description": "...",
+        "url": "dbscan",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-17"
+    },
+    {
+        "title": "聚类算法(四)社区划分算法",
+        "description": "...",
+        "url": "dbscan",
+        "mi": 1.0,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-17"
+    },
+    {
+        "title": "聚类算法(三)基于密度聚类算法",
+        "description": "...",
+        "url": "dbscan",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-17"
+    },
+    {
+        "title": "聚类算法(二)均值漂移算法",
+        "description": "Mean Shift又称为均值漂移算法，与K-means算法一样，都是基于聚类中心的聚类算法，不同的是，mean shift算法不需要事先指定聚类中心个数k。",
+        "url": "mshift",
+        "mi": 1.0,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-17"
+    },
+    {
+        "title": "聚类算法(一)K-平均算法",
+        "description": "K-Means,也被称为k-平均算法，是一种广泛使用的聚类算法，通过比较样本的相似性，将相似的样本划分到同一个类别中。",
+        "url": "kms",
+        "mi": 2.5,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-17"
+    },
+    {
+        "title": "分类算法(六)BP神经网络",
+        "description": "神经网络由很多神经网络层构成，而每一层又由许多单元组成，第一层叫输入层，最后一层叫输出层，中间的各层叫隐藏层，在BP神经网络中，只有相邻的神经层的各个单元之间有联系，除了输出层外，每一层都有一个偏置结点",
+        "url": "bp",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-17"
+    },
+    {
+        "title": "分类算法(五)随机深林",
+        "description": " 随机森林(Random Forest)是一个非常灵活的机器学习方法，从市场营销到医疗保险有着众多的应用。它可以用于市场营销对客户获取和存留建模或预测病人的疾病风险和易感性。",
+        "url": "mlearning9",
+        "mi": 2.5,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-17"
+    },
+    {
+        "title": "分类算法(四)支持向量机",
+        "description": " SVM(Support Vector Machine 最大间隔分类器）是一种二分类模型，它是定义在特征空间上的间隔最大的线性分类器，间隔最大是SVM和感知机不同的地方，间隔最大化对应于泛化误差最小。",
+        "url": "mlearning8",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-17"
+    },
+    {
+        "title": "分类算法(三)因子分解机",
+        "description": " 因子分解机(Factorization Machine, FM)是由Steffen Rendle提出的一种基于矩阵分解的机器学习算法。因式分解机是一种基于LR模型的高效的学习特征间相互关系， \n" +
+        "对于因子分解机FM来说，最大的特点是对于稀疏的数据具有很好的学习能力。",
+        "url": "mlearning7",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "机器学习",
+        "updateTime": "2018-02-17"
+    },
     {
         "title": "分类算法(二)多分类回归",
-        "description": "softmax回归",
+        "description": "softmax回归是Logistic回归在多分类上的推广，即类标签y的取值大于等于2。Softmax回归模型对于手写数字分类，器官识别，动物分类等问题是很有用的。",
         "url": "mlearning6",
         "mi": 2.0,
         "typeColor": "cyan",
@@ -33,8 +152,8 @@ const data = [
         "updateTime": "2018-02-15"
     },
     {
-        "title": "回归算法(一)",
-        "description": "线性回归,一般来说，样本和标签有着连续的取值，目标值不在一个固定的范围，与分类问题的主要区别；常用于预测房价，产值等",
+        "title": "回归算法(一)线性回归",
+        "description": "线性回归(Liner Regression),一般来说，样本和标签有着连续的取值，目标值不在一个固定的范围，与分类问题的主要区别；常用于预测房价，产值等",
         "url": "mlearning3",
         "mi": 2.0,
         "typeColor": "cyan",
@@ -193,6 +312,15 @@ const data = [
         "typeColor": "cyan",
         "typeName": "数据库",
         "updateTime": "2018-02-08"
+    },
+    {
+        "title": "mysql",
+        "description": "mysql的索引原理，及索引生效原理",
+        "url": "mysql3",
+        "mi": 2.5,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-02-18"
     },
     {
         "title": "redis",

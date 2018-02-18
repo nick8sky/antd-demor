@@ -29,7 +29,7 @@ class Mlearning5 extends Component {
                 <p>我们认为WX =0是一个决策边界，当它大于0或小于0时，逻辑回归模型分别预测不同的分类结果。</p>
                 <p>如h(X)=g(w<sub>0</sub>+w<sub>1</sub>x<sub>1</sub>+w<sub>2</sub>x<sub>2</sub>)，其中w<sub>0</sub> =-3 ,w<sub>1</sub> =1  ,w<sub>2</sub> =1;则当−3+x<sub>1</sub>+x<sub>2</sub>≥0时,  则x<sub>1</sub>+x<sub>2</sub>=3是一个决策边界，这时x<sub>1</sub>,x<sub>2</sub>呈线性关系。</p>
                 <p>当h(X)更复杂的时候，我们可以得到非线性的决策边界，例如：</p>
-                <p>h(X) =g(w<sub>0</sub>b +w<sub>1</sub>x<sub>1</sub><sup>2</sup>+w<sub>2</sub>x<sub>2</sub><sup>2</sup> );其中w<sub>0</sub> = 4 ,w<sub>1</sub> =1  ,w<sub>2</sub> =1; 这时当x<sub>1</sub><sup>2</sup>+x<sub>2</sub><sup>2</sup>≥4，这时的决策边界是一个圆形;</p>
+                <p>h(X) =g(w<sub>0</sub>b +w<sub>1</sub>x<sub>1</sub><sup>2</sup>+w<sub>2</sub>x<sub>2</sub><sup>2</sup> );其中w<sub>0</sub> = -4 ,w<sub>1</sub> =1  ,w<sub>2</sub> =1; 这时当x<sub>1</sub><sup>2</sup>+x<sub>2</sub><sup>2</sup>≥4，这时的决策边界是一个圆形;</p>
                 <p><img src={require('../../img/WX20180216-220154@2x.png')} style={{height:"30%",width:"30%"}}/></p>
                 <p>所以我们发现，理论上说，只要我们的h()设计足够合理，准确的说是g(WX)中WX足够复杂，我们能在不同的情形下，拟合出不同的判定边界，从而把不同的样本点分隔开来。</p>
                 <h4>代价(损失)函数</h4>
@@ -52,7 +52,7 @@ class Mlearning5 extends Component {
                 <h4>非凸优化问题</h4>
                 <p>如果定义的损失函数不是一个凸优化函数可能会出现多个局部最优解，这就要求：</p>
                 <p>1、在定义损失函数时最好能找到凸优化的函数替代</p>
-                <p>2、定义合适的步长a,越过局部最优</p>
+                <p>2、定义较小的步长a,避免陷入局部最优</p>
                 <p>3、即使是局部最优也能满足实际需求</p>
             </div>
         );

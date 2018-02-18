@@ -48,3 +48,39 @@
 .ant-col-16 {
   background-color: white;
 }
+
+table,th, td
+{
+  border: 1px solid black;
+}
+table
+{
+  width:80%;
+}
+
+th
+{
+  height:40px;
+}
+th,td
+{
+  text-align:center;
+}
+
+p{
+  font-family: Arial,"Hiragino Sans GB","冬青黑","Microsoft YaHei","微软雅黑",SimSun,"宋体",Helvetica,Tahoma,Arial sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+pre {
+  padding: 16px;
+  overflow: auto;
+  line-height: 1.45;
+  border-radius: 3px;
+  background-color: #cdd2d840;
+}
+

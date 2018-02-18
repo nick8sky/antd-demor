@@ -4,7 +4,11 @@ import React from 'react';
 
 
 const data = [
-
+    {
+        "title": "区块链_技术驱动金融.pdf",
+        "description": "区块链 技术驱动金融 高清版",
+        "url": "http://download.csdn.net/download/llianlianpay/10253004"
+    },
     {
         "title": "人类简史.pdf",
         "description": "人类简史",
@@ -12,7 +16,7 @@ const data = [
     },
     {
         "title": "线性代数及其应用.pdf",
-        "description": "中文版",
+        "description": "中文版 第三版",
         "url": "https://pan.baidu.com/s/1pM2O9hL"
     },
     {

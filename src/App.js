@@ -12,7 +12,8 @@ import Home from './pages/html/Home';
 import About from './pages/html/About';
 //import List from './pages/List';
 import LoadMoreList from './pages/html/LoadMoreList';
-
+//test
+import Login from './pages/html/Login.jsx';
 
 //常量放在import之后
 //主列表 加载过慢 改为主页加载预加载图片
@@ -47,6 +48,11 @@ const Mysql1 = (props) => (
 );
 const Mysql2 = (props) => (
     <Bundle load={() => import('./pages/database/Mysql2')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Mysql3 = (props) => (
+    <Bundle load={() => import('./pages/database/Mysql3')}>
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
@@ -168,20 +174,67 @@ const Mlearning6 = (props) => (
     </Bundle>
 );
 const Mlearning7 = (props) => (
-    <Bundle load={() => import('./pages/mlearn/Mlearning7')}>
+    <Bundle load={() => import('./pages/mlearn/Fm')}>
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
 const Mlearning8 = (props) => (
-    <Bundle load={() => import('./pages/mlearn/Mlearning8')}>
+    <Bundle load={() => import('./pages/mlearn/Svm')}>
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
 const Mlearning9 = (props) => (
-    <Bundle load={() => import('./pages/mlearn/Mlearning9')}>
+    <Bundle load={() => import('./pages/mlearn/RandomF')}>
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
+const Bp = (props) => (
+    <Bundle load={() => import('./pages/mlearn/Bp')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Kms = (props) => (
+    <Bundle load={() => import('./pages/mlearn/Kms')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const MShift = (props) => (
+    <Bundle load={() => import('./pages/mlearn/MShift')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Dbscan = (props) => (
+    <Bundle load={() => import('./pages/mlearn/Dbscan')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+//cto之路
+const CTO1 = (props) => (
+    <Bundle load={() => import('./pages/cto/CTO1')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const CTO2 = (props) => (
+    <Bundle load={() => import('./pages/cto/CTO2')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const CTO3 = (props) => (
+    <Bundle load={() => import('./pages/cto/CTO3')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const CTO4 = (props) => (
+    <Bundle load={() => import('./pages/cto/CTO3')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const CTO5 = (props) => (
+    <Bundle load={() => import('./pages/cto/CTO3')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+
 //无关学习
 const DYH = (props) => (
     <Bundle load={() => import('./pages/upgrade/DYH')}>
@@ -190,6 +243,17 @@ const DYH = (props) => (
 );
 const PeopleHistory = (props) => (
     <Bundle load={() => import('./pages/upgrade/PeopleHistory')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const GoodNight = (props) => (
+    <Bundle load={() => import('./pages/upgrade/GoodNight')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+
+const Test = (props) => (
+    <Bundle load={() => import('./pages/test/Test')}>
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
@@ -231,11 +295,13 @@ class App extends Component {
                                     <Route component={LoadMoreList} exact strict  path="/list"/>
                                     <Route component={ResourceList} exact strict path="/resources"/>
                                     <Route component={DraftList} exact strict path="/d"/>
+                                    <Route component={Login} exact strict path="/login"/>
                                     {/*---------------------------------------*/}
 
                                     <Route component={Mysql0} exact strict path="/mysql0"/>
                                     <Route component={Mysql1} exact strict path="/mysql1"/>
                                     <Route component={Mysql2} exact strict path="/mysql2"/>
+                                    <Route component={Mysql3} exact strict path="/mysql3"/>
                                     <Route component={Redis} exact strict path="/redis"/>
                                     <Route component={Oracle} exact strict path="/oracle"/>
                                     {/*数据结构*/}
@@ -260,7 +326,10 @@ class App extends Component {
                                     <Route component={Mlearning7} exact strict path="/mlearning7"/>
                                     <Route component={Mlearning8} exact strict path="/mlearning8"/>
                                     <Route component={Mlearning9} exact strict path="/mlearning9"/>
-
+                                    <Route component={Bp} exact strict path="/bp"/>
+                                    <Route component={Kms} exact strict path="/kms"/>
+                                    <Route component={MShift} exact strict path="/mshift"/>
+                                    <Route component={Dbscan} exact strict path="/dbscan"/>
 
                                     {/*java*/}
                                     <Route component={Jdk8} exact strict path="/jdk8"/>
@@ -269,10 +338,19 @@ class App extends Component {
                                     <Route component={DevUtils} exact strict path="/devUtils"/>
 
                                     {/*test*/}
-
+                                    <Route component={Test} exact strict path="/test"/>
                                     {/*无关学习*/}
                                     <Route component={DYH} exact strict path="/dyh"/>
                                     <Route component={PeopleHistory} exact strict path="/peopleh"/>
+                                    <Route component={GoodNight} exact strict path="/goodnight"/>
+
+
+                                    {/*co*/}
+                                    <Route component={CTO1} exact strict path="/c1"/>
+                                    <Route component={CTO2} exact strict path="/c2"/>
+                                    <Route component={CTO3} exact strict path="/c3"/>
+                                    <Route component={CTO4} exact strict path="/c4"/>
+                                    <Route component={CTO5} exact strict path="/c5"/>
 
                                     {/*---------------------------------------*/}
                                 </div>

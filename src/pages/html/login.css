@@ -1,0 +1,27 @@
+.loginForm {
+    position: relative;
+    top: 40px; }
+.loginForm .loginLogo {
+    text-align: center; }
+.loginForm .loginText {
+    margin-top: 40px;
+    position: relative;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px; }
+.loginForm .loginText input {
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 5px;
+    width: 180px; }
+.loginForm .loginText .loginBtn {
+    display: inline-block;
+    width: 186px;
+    height: 32px;
+    line-height: 32px;
+    position: relative;
+    top: 30px;
+    background-color: #7f7f7f;
+    color: #fff;
+    text-align: center; }
+
