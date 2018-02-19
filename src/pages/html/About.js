@@ -11,8 +11,8 @@ class About extends Component {
                 <p>发邮件给我 <Icon type="mail" style={{ marginRight: 8 }} />nick070809@163.com</p>
                 <p>坐     标 <Icon type="compass" style={{ marginRight: 8 }} />杭州·中国</p>
                 <p>能     力 <Icon type="dashboard" style={{ marginRight: 8 }} />java /python /scala /mysql /oracle /react</p>
-
-                <p>&nbsp;</p><p>&nbsp;</p>
+                <p>最     近 <Icon type="coffee" style={{ marginRight: 8 }} />在学c++,kotlin</p>
+                <p>&nbsp;</p>
                 <Timeline>
                     <Timeline.Item color="green">杭州-2016</Timeline.Item>
                     <Timeline.Item color="green">重庆-2012</Timeline.Item>

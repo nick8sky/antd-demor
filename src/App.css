@@ -84,3 +84,8 @@ pre {
   background-color: #cdd2d840;
 }
 
+.ant-modal-content {
+  width: 350px;
+  height: 520px;
+  margin-left: 90px;
+}

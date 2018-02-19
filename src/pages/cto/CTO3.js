@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CTO2 extends Component {
+class CTO3 extends Component {
     render() {
         return (
             <div>
@@ -95,4 +95,4 @@ class CTO2 extends Component {
     }
 }
 
-export default CTO2;
+export default CTO3;

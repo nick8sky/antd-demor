@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {HashRouter, Route} from 'react-router-dom';
-import {Layout, Row, Col,Icon,BackTop,Affix} from 'antd'
+import {Layout, Row, Col,Icon,BackTop} from 'antd'
 
 
 
@@ -224,13 +224,36 @@ const CTO3 = (props) => (
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
-const CTO4 = (props) => (
-    <Bundle load={() => import('./pages/cto/CTO3')}>
+
+
+//tcpip
+const ARP = (props) => (
+    <Bundle load={() => import('./pages/tcpip/ARP')}>
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
-const CTO5 = (props) => (
-    <Bundle load={() => import('./pages/cto/CTO3')}>
+const HTTPS = (props) => (
+    <Bundle load={() => import('./pages/tcpip/Https')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const ThridLayerEx = (props) => (
+    <Bundle load={() => import('./pages/tcpip/ThridLayerEx')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const RARP = (props) => (
+    <Bundle load={() => import('./pages/tcpip/RARP')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const Ping = (props) => (
+    <Bundle load={() => import('./pages/tcpip/Ping')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const TraceRoute = (props) => (
+    <Bundle load={() => import('./pages/tcpip/TraceRoute')}>
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
@@ -349,9 +372,15 @@ class App extends Component {
                                     <Route component={CTO1} exact strict path="/c1"/>
                                     <Route component={CTO2} exact strict path="/c2"/>
                                     <Route component={CTO3} exact strict path="/c3"/>
-                                    <Route component={CTO4} exact strict path="/c4"/>
-                                    <Route component={CTO5} exact strict path="/c5"/>
 
+
+                                    {/*tcpip*/}
+                                    <Route component={ARP} exact strict path="/arp"/>
+                                    <Route component={HTTPS} exact strict path="/https"/>
+                                    <Route component={ThridLayerEx} exact strict path="/tlex"/>
+                                    <Route component={RARP} exact strict path="/rarp"/>
+                                    <Route component={Ping} exact strict path="/ping"/>
+                                    <Route component={TraceRoute} exact strict path="/traceRoute"/>
                                     {/*---------------------------------------*/}
                                 </div>
                             </HashRouter>

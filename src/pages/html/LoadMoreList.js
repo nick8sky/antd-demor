@@ -1,10 +1,66 @@
-import {List, Button, Spin,Icon,Rate,Tag} from 'antd';
+import {List, Button, Spin,Icon,Rate,Tag,message,Modal ,Input} from 'antd';
 import React from 'react';
 import {Link} from 'react-router-dom';
 
 
 
 const data = [
+
+    {
+        "title": "Traceroute程序",
+        "description": "Traceroute程序可以让我们看到IP数据报从一台主机传到另一台主机所经过的路由。 Traceroute程序还可以让我们使用IP源路由选项。",
+        "url": "traceRoute",
+        "mi": 1.0,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-19"
+    },
+
+    {
+        "title": "Ping程序",
+        "description": "Ping程序由Mike Muuss编写，目的是为了测试另一 台主机是否可达。",
+        "url": "ping",
+        "mi": 1.0,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-19"
+    },
+    {
+        "title": "逆地址解析协议",
+        "description": "Mac地址由设备制造商定义/分配，每一个硬件设备都有一个链路层主地址（MAC地址），保存在设备的永久内存中。设备的mac地址不会改变（现在可以进行mac地址伪装),IP地址由用户配置给网络接口， 网络接口的IP地址是可以发生变化的",
+        "url": "rarp",
+        "mi": 0.5,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-19"
+    },
+    {
+        "title": "地址解析协议",
+        "description": "Mac地址由设备制造商定义/分配，每一个硬件设备都有一个链路层主地址（MAC地址），保存在设备的永久内存中。设备的mac地址不会改变（现在可以进行mac地址伪装),IP地址由用户配置给网络接口， 网络接口的IP地址是可以发生变化的",
+        "url": "arp",
+        "mi": 2.5,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-19"
+    },
+    {
+        "title": "三层交换机多网段设置指导",
+        "description": "企业里面一般连接有多个部门，不同部门可能需要区分管理，设置不同的网络权限，三层交换机可以划分多个网段，实现不同部门设置在不同的网段，方便管理。划分多网段还可以隔离广播包，避免网络上因大量广播包而导致的网络传输效率低的问题。",
+        "url": "tlex",
+        "mi": 2.5,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-19"
+    },
+    {
+        "title": "HTTPS 原理详解",
+        "description": "HTTPS（全称：HyperText Transfer Protocol over Secure Socket Layer），其实 HTTPS 并不是一个新鲜协议，Google 很早就开始启用了，初衷是为了保证数据安全。 近两年，Google、Baidu、Facebook 等这样的互联网巨头，不谋而合地开始大力推行 HTTPS， 国内外的大型互联网公司很多也都已经启用了全站 HTTPS，这也是未来互联网发展的趋势。",
+        "url": "https",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-19"
+    },
 
     {
         "title": "[转]架构师之路：一个架构师需要掌握的知识技能",
@@ -366,23 +422,36 @@ const data = [
         "typeName": "JAVA",
         "updateTime": "2018-02-12"
     }
-
-
 ];
 
 
+let needInput = true;
+
 class LoadMoreList extends React.Component {
-    state = {
-        loading: true,
-        loadingMore: false,
-        showLoadingMore: true,
-        remaining :0,
-        total :0,
-        data: [],
+    constructor(props) {
+        super(props);
+        /*console.log(props);*/
+        this.state = {
+            loading: true,
+            loadingMore: false,
+            showLoadingMore: true,
+            remaining :0,
+            key:'',
+            visible: false,
+            total :0,
+            data: [],
+        }
+        /*console.log(props);
+        const  q = props.location.search ;
+        if(q && q.length == 5 ){
+            const w = q.substring(1);
+            if(w =='1989' || w== '2018'){
+                needInput = false ;
+            }
+        }*/
     }
 
     pigeNum = 1;
-
 
     componentDidMount() {
         this.getData((results) => {
@@ -419,6 +488,23 @@ class LoadMoreList extends React.Component {
 
 
     onLoadMore = () => {
+
+        if(needInput){
+            this.setState({
+                visible: true,
+            });
+            return ;
+        }
+        /*if(!canLoad){
+            let answer=prompt("添加微信获取验证码,请注明github");
+            if(answer && answer =='1989'){
+                canLoad = true ;
+            }else {
+                message.error('输入有误');
+
+                return ;
+            }
+        }*/
         this.setState({
             loadingMore: true,
         });
@@ -431,9 +517,31 @@ class LoadMoreList extends React.Component {
                 window.dispatchEvent(new Event('resize'));
             });
         });
+
     }
 
-
+    handleOk = (e) => {
+        /*console.log(this.state.key);*/
+        this.setState({
+            visible: false,
+        });
+        if(this.state.key && (this.state.key == '1989' || this.state.key == '2018')){
+            needInput = false ;
+            this.onLoadMore() ;
+        }
+    }
+    handleCancel = (e) => {
+        this.setState({
+            visible: false,
+        });
+    }
+    emitEmpty = () => {
+        this.keyInput.focus();
+        this.setState({ key: '' });
+    }
+    onChangeUserName = (e) => {
+        this.setState({ key: e.target.value });
+    }
 
     render() {
         const IconText = ({ type, text }) => (
@@ -441,8 +549,8 @@ class LoadMoreList extends React.Component {
                 {text}
             </span>
         );
-
-        const {loading, loadingMore, showLoadingMore, data,remaining,total} = this.state;
+        const suffix = key ? <Icon type="close-circle" onClick={this.emitEmpty} /> : null;
+        const {loading, loadingMore, showLoadingMore, data,remaining,total,key} = this.state;
         const loadMore = showLoadingMore ? (
             <div style={{textAlign: 'center', marginTop: 12, height: 32, lineHeight: '32px'}}>
                 {loadingMore && <Spin/>}
@@ -450,6 +558,25 @@ class LoadMoreList extends React.Component {
             </div>
         ) : null;
         return (
+            <div>
+            <Modal
+                title="添加微信获取验证码,请注明github"
+                visible={this.state.visible}
+                onOk={this.handleOk}
+                onCancel={this.handleCancel}
+                >
+                <p>
+                    <p><img src={require('../../img/WX20180220-022732@2x.png')} style={{height:"100%",width:"100%"}}/></p>
+                    <Input
+                    placeholder="输入验证码"
+                    prefix={<Icon type="question-circle-o" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                    suffix={suffix}
+                    value={key}
+                    onChange={this.onChangeUserName}
+                    ref={node => this.keyInput = node}
+                /></p>
+
+            </Modal>
             <List
                 className="demo-loadmore-list"
                 loading={loading}
@@ -474,8 +601,10 @@ class LoadMoreList extends React.Component {
 
                 )}
             />
+            </div>
         );
     }
 }
 
 export default LoadMoreList;
+
