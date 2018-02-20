@@ -1,9 +1,26 @@
-import {List, Button, Spin,Icon,Rate,Tag} from 'antd';
+import {List, Button, Spin, Icon, Rate, Tag} from 'antd';
 import React from 'react';
 
 
-
 const data = [
+
+
+    {
+        "title": "TCP/IP详解卷一.pdf",
+        "description": "TCP/IP详解卷一  密码:8i5x",
+        "url": "https://pan.baidu.com/s/1jJuRza2"
+    },
+    {
+        "title": "TCP/IP详解卷二.pdf",
+        "description": "TCP/IP详解卷二 密码:ezjq",
+        "url": "https://pan.baidu.com/s/1bqio0vP"
+    },
+    {
+        "title": "TCP/IP详解卷三.pdf",
+        "description": "TCP/IP详解卷三 密码:z699",
+        "url": "https://pan.baidu.com/s/1c3wz7g8"
+    },
+
     {
         "title": "区块链_技术驱动金融.pdf",
         "description": "区块链 技术驱动金融 高清版",
@@ -28,13 +45,13 @@ const data = [
 ];
 
 
-class ResourceList  extends React.Component {
+class ResourceList extends React.Component {
     state = {
         loading: true,
         loadingMore: false,
         showLoadingMore: true,
-        remaining :0,
-        total :0,
+        remaining: 0,
+        total: 0,
         data: [],
     }
 
@@ -59,10 +76,10 @@ class ResourceList  extends React.Component {
         if (this.pigeNum * pageSize >= data.length) {
             lastIndex = data.length;
         }
-        this.remaining = data.length - lastIndex ;
+        this.remaining = data.length - lastIndex;
         this.setState({
-            remaining: data.length - lastIndex ,
-            total:data.length,
+            remaining: data.length - lastIndex,
+            total: data.length,
         });
 
         for (let j = (this.pigeNum - 1) * pageSize; j < lastIndex; j += 1) {
@@ -91,19 +108,19 @@ class ResourceList  extends React.Component {
     }
 
 
-
     render() {
-        const IconText = ({ type, text }) => (
-            <span> <Icon type={type} style={{ marginRight: 8 }} />
+        const IconText = ({type, text}) => (
+            <span> <Icon type={type} style={{marginRight: 8}}/>
                 {text}
             </span>
         );
 
-        const {loading, loadingMore, showLoadingMore, data,remaining,total} = this.state;
+        const {loading, loadingMore, showLoadingMore, data, remaining, total} = this.state;
         const loadMore = showLoadingMore ? (
             <div style={{textAlign: 'center', marginTop: 12, height: 32, lineHeight: '32px'}}>
                 {loadingMore && <Spin/>}
-                {!loadingMore && <Button onClick={this.onLoadMore}>  loading more, total {total} remaining {remaining}  </Button>}
+                {!loadingMore &&
+                <Button onClick={this.onLoadMore}> loading more, total {total} remaining {remaining}  </Button>}
             </div>
         ) : null;
         return (
@@ -114,7 +131,7 @@ class ResourceList  extends React.Component {
                 loadMore={loadMore}
                 dataSource={data}
                 renderItem={item => (
-                    <List.Item >
+                    <List.Item>
                         <List.Item.Meta
                             title={
                                 <span>
@@ -122,7 +139,7 @@ class ResourceList  extends React.Component {
                                  <a href={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></a>
                                 </span>
                             }
-                            description= {item.description}
+                            description={item.description}
                         />
                     </List.Item>
 

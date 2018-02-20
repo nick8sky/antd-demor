@@ -5,7 +5,60 @@ import {Link} from 'react-router-dom';
 
 
 const data = [
-
+    {
+        "title": "why Kotlin",
+        "description": "或许该尝试用Kotlin写新的应用了。",
+        "url": "koltin1",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-02-20"
+    },
+    {
+        "title": "[转]巴黎最后的探戈",
+        "description": "时常能想起这部电影中急促却又充满着遥远乡愁的爵士音乐，那些仿佛自原始蛮荒的场景中传来的鼓点，夹杂着岁月流逝的沙沙声，与时而情绪激动歇斯底里，时而平滑如水行走如风的萨克斯。",
+        "url": "mv1",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "生活",
+        "updateTime": "2018-02-20"
+    },
+    {
+        "title": "传输控制协议",
+        "description": "TCP是一个面向连接的协议。无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。本章将详细讨论一个TCP连接是如何建立的以及通信结束后是如何终止的。",
+        "url": "tcp",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-20"
+    },
+    {
+        "title": "域名系统",
+        "description": "暂无",
+        "url": "dns",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-20"
+    },
+    {
+        "title": "用户数据报协议",
+        "description": "暂无",
+        "url": "udp",
+        "mi": 1.0,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-20"
+    },
+    {
+        "title": "IP选路",
+        "description": "选路是IP最重要的功能之一。需要进行选路的数据报可以由本地主机产生，也可以由其他主机产生。在后一种情况下，主机必须配置成一个路由器，否则通过网络接口接收到的数据报，如果目的地址不是本机就要被丢弃。",
+        "url": "iproute",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-20"
+    },
     {
         "title": "Traceroute程序",
         "description": "Traceroute程序可以让我们看到IP数据报从一台主机传到另一台主机所经过的路由。 Traceroute程序还可以让我们使用IP源路由选项。",
@@ -15,7 +68,6 @@ const data = [
         "typeName": "Tcp/Ip",
         "updateTime": "2018-02-19"
     },
-
     {
         "title": "Ping程序",
         "description": "Ping程序由Mike Muuss编写，目的是为了测试另一 台主机是否可达。",
@@ -24,6 +76,24 @@ const data = [
         "typeColor": "cyan",
         "typeName": "Tcp/Ip",
         "updateTime": "2018-02-19"
+    },
+    {
+        "title": "网络控制报文协议",
+        "description": "ICMP(Internet Control Message Protocol)认为是网络层的一个组成部分,IP协议并不是一个可靠的协议，它不保证数据被送达，那么保证数据送达的工作应该由其他的模块来完成。其中一个重要的模块就是ICMP（网络控制报文）协议。",
+        "url": "icmp",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-20"
+    },
+    {
+        "title": "网络协议",
+        "description": "IP是TCP/IP协议族中最为核心的协议。所有的TCP、UDP、ICMP及IGMP数据都以IP数据报格式传输。",
+        "url": "iplayer",
+        "mi": 3.0,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-20"
     },
     {
         "title": "逆地址解析协议",
@@ -42,6 +112,15 @@ const data = [
         "typeColor": "cyan",
         "typeName": "Tcp/Ip",
         "updateTime": "2018-02-19"
+    },
+    {
+        "title": "链路层",
+        "description": "ISO/OSI的参考模型共有7层，由低层至高层分别为：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。",
+        "url": "linklayer",
+        "mi": 2.5,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-20"
     },
     {
         "title": "三层交换机多网段设置指导",
@@ -441,14 +520,13 @@ class LoadMoreList extends React.Component {
             total :0,
             data: [],
         }
-        /*console.log(props);
+        /*console.log(props);*/
         const  q = props.location.search ;
-        if(q && q.length == 5 ){
-            const w = q.substring(1);
-            if(w =='1989' || w== '2018'){
+        if(q){
+            if(q =='?1989' || q== '?2018'){
                 needInput = false ;
             }
-        }*/
+        }
     }
 
     pigeNum = 1;
@@ -525,7 +603,7 @@ class LoadMoreList extends React.Component {
         this.setState({
             visible: false,
         });
-        if(this.state.key && (this.state.key == '1989' || this.state.key == '2018')){
+        if(this.state.key && (this.state.key == '1989' || this.state.key == '2018' || this.state.key == 'nick070809')){
             needInput = false ;
             this.onLoadMore() ;
         }
@@ -560,7 +638,7 @@ class LoadMoreList extends React.Component {
         return (
             <div>
             <Modal
-                title="添加微信获取验证码,请注明github"
+                title="添加加微信好友,请注明github"
                 visible={this.state.visible}
                 onOk={this.handleOk}
                 onCancel={this.handleCancel}
@@ -568,7 +646,7 @@ class LoadMoreList extends React.Component {
                 <p>
                     <p><img src={require('../../img/WX20180220-022732@2x.png')} style={{height:"100%",width:"100%"}}/></p>
                     <Input
-                    placeholder="输入验证码"
+                    placeholder="请输入图中的微信号或验证码"
                     prefix={<Icon type="question-circle-o" style={{ color: 'rgba(0,0,0,.25)' }} />}
                     suffix={suffix}
                     value={key}

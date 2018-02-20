@@ -89,7 +89,11 @@ const DevUtils = (props) => (
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
-
+const Koltin1 = (props) => (
+    <Bundle load={() => import('./pages/java/Koltin1')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
 
 //数据结构
 const HashTable = (props) => (
@@ -257,6 +261,41 @@ const TraceRoute = (props) => (
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
+const LinkLayer = (props) => (
+    <Bundle load={() => import('./pages/tcpip/LinkLayer')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const IpLayer = (props) => (
+    <Bundle load={() => import('./pages/tcpip/IpLayer')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const ICMP =(props) => (
+    <Bundle load={() => import('./pages/tcpip/ICMP')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const IPRoute =(props) => (
+    <Bundle load={() => import('./pages/tcpip/IPRoute')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const UDP =(props) => (
+    <Bundle load={() => import('./pages/tcpip/UDP')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const DNS =(props) => (
+    <Bundle load={() => import('./pages/tcpip/DNS')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const TCP =(props) => (
+    <Bundle load={() => import('./pages/tcpip/TCP')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
 
 //无关学习
 const DYH = (props) => (
@@ -271,6 +310,11 @@ const PeopleHistory = (props) => (
 );
 const GoodNight = (props) => (
     <Bundle load={() => import('./pages/upgrade/GoodNight')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const MV1 = (props) => (
+    <Bundle load={() => import('./pages/upgrade/MV1')}>
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
@@ -359,6 +403,7 @@ class App extends Component {
                                     <Route component={ClassLoader} exact strict path="/classLoader"/>
                                     <Route component={Tomcat} exact strict path="/tomcat"/>
                                     <Route component={DevUtils} exact strict path="/devUtils"/>
+                                    <Route component={Koltin1} exact strict path="/koltin1"/>
 
                                     {/*test*/}
                                     <Route component={Test} exact strict path="/test"/>
@@ -366,7 +411,7 @@ class App extends Component {
                                     <Route component={DYH} exact strict path="/dyh"/>
                                     <Route component={PeopleHistory} exact strict path="/peopleh"/>
                                     <Route component={GoodNight} exact strict path="/goodnight"/>
-
+                                    <Route component={MV1} exact strict path="/mv1"/>
 
                                     {/*co*/}
                                     <Route component={CTO1} exact strict path="/c1"/>
@@ -381,6 +426,13 @@ class App extends Component {
                                     <Route component={RARP} exact strict path="/rarp"/>
                                     <Route component={Ping} exact strict path="/ping"/>
                                     <Route component={TraceRoute} exact strict path="/traceRoute"/>
+                                    <Route component={LinkLayer} exact strict path="/linklayer"/>
+                                    <Route component={IpLayer} exact strict path="/iplayer"/>
+                                    <Route component={ICMP} exact strict path="/icmp"/>
+                                    <Route component={IPRoute} exact strict path="/iproute"/>
+                                    <Route component={TCP} exact strict path="/tcp"/>
+                                    <Route component={DNS} exact strict path="/dns"/>
+                                    <Route component={UDP} exact strict path="/udp"/>
                                     {/*---------------------------------------*/}
                                 </div>
                             </HashRouter>
