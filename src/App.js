@@ -11,10 +11,11 @@ import Title from './pages/html/Title';
 import Home from './pages/html/Home';
 import About from './pages/html/About';
 //import List from './pages/List';
-import LoadMoreList from './pages/html/LoadMoreList';
-//test
-import Login from './pages/html/Login.jsx';
 
+
+import Classification from './pages/html/Classification';
+
+const {Content, Footer} = Layout;
 //常量放在import之后
 //主列表 加载过慢 改为主页加载预加载图片
 /*const LoadMoreList = (props) => (
@@ -22,6 +23,41 @@ import Login from './pages/html/Login.jsx';
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );*/
+const Co = (props) => (
+    <Bundle load={() => import('./pages/html/Co')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const MLearn = (props) => (
+    <Bundle load={() => import('./pages/html/MLearn')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const UPgrade = (props) => (
+    <Bundle load={() => import('./pages/html/UPgrade')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const JavaList = (props) => (
+    <Bundle load={() => import('./pages/html/JavaList')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const DAtabase = (props) => (
+    <Bundle load={() => import('./pages/html/DAtabase')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const DAtastructure = (props) => (
+    <Bundle load={() => import('./pages/html/DAtastructure')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const TCpip = (props) => (
+    <Bundle load={() => import('./pages/html/TCpip')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
 const ResourceList = (props) => (
     <Bundle load={() => import('./pages/html/ResourceList')}>
         {(Chat) => <Chat {...props}/>}
@@ -33,7 +69,7 @@ const DraftList = (props) => (
     </Bundle>
 );
 
-const {Content, Footer} = Layout;
+
 
 //数据库
 const Mysql0 = (props) => (
@@ -89,12 +125,22 @@ const DevUtils = (props) => (
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
-const Koltin1 = (props) => (
-    <Bundle load={() => import('./pages/java/Koltin1')}>
+const Kotlin1 = (props) => (
+    <Bundle load={() => import('./pages/java/Kotlin1')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const PessimisticLock = (props) => (
+    <Bundle load={() => import('./pages/java/PessimisticLock')}>
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
 
+const IDC = (props) => (
+    <Bundle load={() => import('./pages/cto/IDC')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
 //数据结构
 const HashTable = (props) => (
     <Bundle load={() => import('./pages/datastructure/HashTable')}>
@@ -341,7 +387,7 @@ class App extends Component {
                                     <Route component={Title} path="/"/>
                                 </HashRouter>
                                 <br/>
-                                <hr/>
+
                             </div>
                         </Col>
                     </Row>
@@ -359,10 +405,19 @@ class App extends Component {
                                     <Route component={Home}  exact strict path="/"/>
                                     {/*<Route component={List} path="/list"/>*/}
                                     <Route component={About} exact strict path="/about"/>
-                                    <Route component={LoadMoreList} exact strict  path="/list"/>
+                                    {/*<Route component={LoadMoreList} exact strict  path="/list"/>*/}
+                                    <Route component={Classification} exact strict  path="/class"/>
                                     <Route component={ResourceList} exact strict path="/resources"/>
                                     <Route component={DraftList} exact strict path="/d"/>
-                                    <Route component={Login} exact strict path="/login"/>
+                                    {/*<Route component={Login} exact strict path="/login"/>*/}
+                                    <Route component={TCpip} exact strict  path="/tcpip"/>
+                                    <Route component={DAtastructure} exact strict  path="/datastructure"/>
+                                    <Route component={DAtabase} exact strict  path="/database"/>
+                                    <Route component={JavaList} exact strict  path="/javas"/>
+                                    <Route component={UPgrade} exact strict  path="/upgrade"/>
+                                    <Route component={MLearn} exact strict  path="/mlearn"/>
+                                    <Route component={Co} exact strict  path="/co"/>
+
                                     {/*---------------------------------------*/}
 
                                     <Route component={Mysql0} exact strict path="/mysql0"/>
@@ -403,7 +458,9 @@ class App extends Component {
                                     <Route component={ClassLoader} exact strict path="/classLoader"/>
                                     <Route component={Tomcat} exact strict path="/tomcat"/>
                                     <Route component={DevUtils} exact strict path="/devUtils"/>
-                                    <Route component={Koltin1} exact strict path="/koltin1"/>
+                                    <Route component={Kotlin1} exact strict path="/kotlin1"/>
+                                    <Route component={PessimisticLock} exact strict path="/pessimisticLock"/>
+
 
                                     {/*test*/}
                                     <Route component={Test} exact strict path="/test"/>
@@ -417,6 +474,7 @@ class App extends Component {
                                     <Route component={CTO1} exact strict path="/c1"/>
                                     <Route component={CTO2} exact strict path="/c2"/>
                                     <Route component={CTO3} exact strict path="/c3"/>
+                                    <Route component={IDC} exact strict path="/idc"/>
 
 
                                     {/*tcpip*/}

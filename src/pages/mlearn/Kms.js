@@ -14,7 +14,10 @@ class Kms extends Component {
                 <p>对于欧式空间的样本数据，以平方误差和（sum of the squared error, SSE)作为聚类的目标函数，同时也可以衡量不同聚类结果好坏的指标：</p>
                 <p><img src={require('../../img/WX20180217-170302@2x.png')} style={{height:"20%",width:"20%"}}/></p>
                 <p>下图中给出了一个通过4次迭代聚类3个中心的例子：</p>
-                <p><img src={require('../../img/399159-20160131182028552-1529699913.png')} style={{height:"75%",width:"75%"}}/></p>
+                {/*<p><img src={require('../../img/399159-20160131182028552-1529699913.png')} style={{height:"75%",width:"75%"}}/></p>*/}
+                <p><img src=" http://i4.bvimg.com/633340/a37f6782955757ee.png" style={{height:"75%",width:"75%"}}/></p>
+
+
                 <p>k-means存在缺点：</p>
                 <p>1、k-means容易受到初始质心的影响；比如在上图中，因选择初始质心不恰当而造成次优的聚类结果（SSE较大）：</p>
                 <p>2、同时，k的个数也会直接影响聚类结果，最优聚类的k值应与样本数据本身的结构信息相吻合，而这种结构信息是很难去掌握，因此选取最优k值是非常困难的。</p>

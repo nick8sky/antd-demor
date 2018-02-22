@@ -89,3 +89,13 @@ pre {
   height: 520px;
   margin-left: 90px;
 }
+
+.gutter-box {
+
+  padding: 10px 0;
+}
+
+.gutter-example .ant-row > div {
+  background: transparent;
+  border: 0;
+}

@@ -6,12 +6,18 @@ class LinkLayer extends Component {
             <div>
                 <h2>链路层</h2>
                 <p>Tcp/ip参考4层模型：</p>
-                <p><img src={require('../../img/WX20180219-124427@2x.png')} style={{height:"30%",width:"30%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180219-124427@2x.png')} style={{height:"30%",width:"30%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/b8e3a22bdb5828ff.png" style={{height:"30%",width:"30%"}}/></p>
                 <p>ISO/OSI的参考模型共有7层，由低层至高层分别为：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。</p>
                 <p>而我们在发送数据时：</p>
-                <p><img src={require('../../img/20130909165032968.png')} style={{height:"50%",width:"50%"}}/></p>
+                {/*<p><img src={require('../../img/20130909165032968.png')} style={{height:"50%",width:"50%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/fb72aca9dd86b2ca.png" style={{height:"50%",width:"50%"}}/></p>
                 <p>&nbsp;</p>
-                <p><img src={require('../../img/WX20180220-123232@2x.png')} style={{height:"40%",width:"40%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180220-123232@2x.png')} style={{height:"40%",width:"40%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/cb4197a7a2927a04.png" style={{height:"40%",width:"40%"}}/></p>
                 <p>	在TCP/IP协议族中，链路层主要有三个目的:</p>
                 <p>(1)为IP模块发送和接收IP数据报;</p>
                 <p>(2)为ARP模块发送ARP请求和接收ARP应答;</p>
@@ -27,15 +33,21 @@ class LinkLayer extends Component {
                 从概念就看出区别啦，首先互联网是最大的一个网，广域网包含在了互联网中，局域网比广域网小，也是包含在互联网中的。而以太网，是一种技术，一种用于局域网的技术。
                 </code></pre>
                 <p>不同的协议层对数据包有不同的称谓，在传输层[tcp]叫做段(segment)，在网络层[ip]叫做数据报(datagram)，在链路层[link]叫做帧(frame)，在应用层http叫做报文。数据封装成帧后发到传输介质上，到达目的主机后每层协议再剥掉相应的首部，最后将应用层数据交给应用程序处理。</p>
-                <p><img src={require('../../img/WX20180219-140918@2x.png')} style={{height:"60%",width:"60%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180219-140918@2x.png')} style={{height:"60%",width:"60%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/d1f3cbdc07d25b17.png" style={{height:"60%",width:"60%"}}/></p>
                 <p>其实在链路层之下还有物理层，指的是电信号的传递方式，比如现在以太网通用的网线(双绞线)、早期以太网采用的的同轴电缆(现在主要用于有线电视)、光纤等都属于物理层的概念。</p>
                 <p>&nbsp;</p>
                 <h3>环回接口</h3>
                 <p>大多数的系统都支持环回接口(Loopback Interface)，允许主机上程序通过TCP/IP进行通信。A类网络号127就是为环回接口预留的。根据惯例，大多数系统把IP地址127.0.0.1分配给这个接口，并命名为localhost。一个传给环回接口的IP数据报不会发向网络。</p>
-                <p><img src={require('../../img/WX20180219-140304@2x.png')} style={{height:"30%",width:"30%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180219-140304@2x.png')} style={{height:"30%",width:"30%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/c658c6e77a584811.png" style={{height:"30%",width:"30%"}}/></p>
                 <p>我们想象，一旦传输层检测到目的端地址是环回地址时，应该可以省略部分传输层和所有网络层的逻辑操作。但是大多数的系统还是照样完成传输层和网络层的所有过程，只是当IP数据报离开网络层时把它返回给自己。			</p>
                 <p>环回接口处理IP数据报的简单过程：</p>
-                <p><img src={require('../../img/WX20180220-125036@2x.png')} style={{height:"60%",width:"60%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180220-125036@2x.png')} style={{height:"60%",width:"60%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/a8d9ea17d6de7eff.png" style={{height:"60%",width:"60%"}}/></p>
                 <p>上图中，数据报先复制一份给环回接口，然后送到以太网上。			</p>
                 <h3>最大传输单元MTU</h3>
                 <p>	以太网和802.3对数据帧的长度都有一个限制，其最大值分别是1500和1492字节。链路层的这个特性称作MTU，最大传输单元。不同类型的网络大多数都有一个上限。如果IP层有一个数据报要传，而且数据的长度比链路层的MTU还大，那么IP层就需要进行分片（fragmentation），把数据报分成若干片，这样每一片都小于MTU。</p>

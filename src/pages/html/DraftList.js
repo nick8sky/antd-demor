@@ -6,12 +6,12 @@ import React from 'react';
 const data = [
 
     {
-        "title": "xxx.pdf",
+        "title": "test1",
         "description": "xxxx",
         "url": "http://www.baidu.com"
     },
     {
-        "title": "xxx.pdf",
+        "title": "test2",
         "description": "xxxx",
         "url": "http://www.baidu.com"
     }

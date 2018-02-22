@@ -6,10 +6,14 @@ class ARP extends Component {
             <div>
                 <h2>网际协议IP</h2>
                 <p>以太网帧首部</p>
-                <p><img src={require('../../img/20161013182456810.png')} style={{height:"60%",width:"60%"}}/></p>
+                {/*<p><img src={require('../../img/20161013182456810.png')} style={{height:"60%",width:"60%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/71e2f36d264f71e8.png" style={{height:"60%",width:"60%"}}/></p>
                 <p>=目的地址+源地址+子模块类型+子模块数据</p>
                 <p>IP报头首部</p>
-                <p><img src={require('../../img/20161013182606405.png')} style={{height:"60%",width:"60%"}}/></p>
+                {/*<p><img src={require('../../img/20161013182606405.png')} style={{height:"60%",width:"60%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/c67265d4fe245518.png" style={{height:"60%",width:"60%"}}/></p>
                 <p>=TTL + 源ip地址 + 目的ip地址 + 协议 + 数据；</p>
                 <p>普通的IP首部长为20个字节，除非含有选项字段。</p>
                 <p>4位版本：目前协议版本号是4，因此IP有时也称作IPV4.</p>
@@ -39,12 +43,20 @@ class ARP extends Component {
                 <p>从IP数据报的首部并不知道源主机或目的主机所连接的网络是否进行了子网划分。这是因为32位的IP地址本身以及数据报的首部都没有包含任何有关子网划分的信息。因此必须想办法，使IP数据报到达时路由器知道如何把它转发至某个子网。这就是<strong>子网掩码</strong>(** subnet mask **)。</p>
                 <p>子网掩码：也是32位，由一串1和跟随的一串0组成。子网掩码中的1对应于IP地址中原来的 net-id 加上 subnet-id，而子网掩码中的0对应于现在的 host-id 。</p>
                 <p>使用子网掩码的好处是：不管网络有没有划分子网，只要把子网掩码和IP地址进行逐位的“与”运算（ AND ），就立即得出网络地址来。</p>
-                <p><img src={require('../../img/2010100518305958.jpg')} style={{height:"45%",width:"45%"}}/></p>
-                <p><img src={require('../../img/WX20180220-135806@2x.png')} style={{height:"60%",width:"60%"}}/></p>
-                <p><img src={require('../../img/WX20180220-135849@2x.png')} style={{height:"60%",width:"60%"}}/></p>
+                {/*<p><img src={require('../../img/2010100518305958.jpg')} style={{height:"45%",width:"45%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/5a8d2f820de2f5e6.jpg" style={{height:"45%",width:"45%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180220-135806@2x.png')} style={{height:"60%",width:"60%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/043ae129902cf221.png" style={{height:"60%",width:"60%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180220-135849@2x.png')} style={{height:"60%",width:"60%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/84cf2bfbbd71f368.png" style={{height:"60%",width:"60%"}}/></p>
                 <p>140.252.13子网中的所有接口的子网掩码是255.255.255.224，或0xffffffe0。这表明最右边的5bit留给主机号，左边的27bit留给网络号和子网号。
                     所有接口的IP地址和子网掩码的分配情况如图</p>
-                <p><img src={require('../../img/WX20180220-135943@2x.png')} style={{height:"60%",width:"60%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180220-135943@2x.png')} style={{height:"60%",width:"60%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/973c9970398808b6.png" style={{height:"60%",width:"60%"}}/></p>
                 <p>VLSM(Variable Length Subnet masks)
                     <strong>变长子网掩码</strong></p>
                 <p>我们可能会被它的字面意思给弄糊涂了，什么变长子网掩码，实际上子网掩码的大小不会自己改变的，VLSM的意思是不同子网的子网掩码可能有不同的长度，但一旦子网掩码的长度确定了，它们就不变了。这个技术对于高效分配IP地址，减少路由表的大小非常有用，但是如果使用不当可能会造成意想不到的错误。</p>

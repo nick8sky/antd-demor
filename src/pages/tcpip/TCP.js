@@ -11,7 +11,9 @@ class ARP extends Component {
                 <p>Socket是对TCP/IP协议的抽象，一些最基本的函数接口，比如create、listen、connect、accept、send、read和write等等。</p>
                 <p>ACK (Acknowledgement）即是确认字符，在数据通信中，接收方发给发送方的一种传输类控制字符。表示发来的数据已确认接收无误。</p>
                 <p><strong>TCP连接的三次握手</strong></p>
-                <p><img src={require('../../img/1519113030758.jpg')} style={{height:"40%",width:"40%"}}/></p>
+                {/*<p><img src={require('../../img/1519113030758.jpg')} style={{height:"40%",width:"40%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/6fddb33865f640d9.jpg" style={{height:"40%",width:"40%"}}/></p>
                 <p>&nbsp;</p>
                 <p>首先Client端发送连接请求报文，Server端接受连接后回复ACK报文，并为这次连接分配资源。Client端接收到ACK报文后也向Server段发送ACK报文，并分配资源，这样TCP连接就建立了。
                     Seq+ack+ack</p>
@@ -21,12 +23,16 @@ class ARP extends Component {
                 <p>第三次握手：主机A收到后检查ack number是否正确，即第一次发送的seq number+1，以及位码ack是否为1，若正确，主机A会再发送ack number=(主机B的seq+1)，ack=1，主机B收到后确认seq值与ack=1则连接建立成功。</p>
                 <p>&nbsp;</p>
                 <p><strong>TCP连接的四次握手</strong></p>
-                <p><img src={require('../../img/1519113303153.jpg')} style={{height:"35%",width:"35%"}}/></p>
+               {/* <p><img src={require('../../img/1519113303153.jpg')} style={{height:"35%",width:"35%"}}/></p>*/}
+
+                <p><img src=" http://i4.bvimg.com/633340/a13d275f3b5504ef.jpg" style={{height:"35%",width:"35%"}}/></p>
                 <p>假设Client端发起中断连接请求，也就是发送FIN报文(继续发送未发送完的数据)。Server端接到FIN报文后，先发送ACK(确认)。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。Server端确定数据已发送完成，则向Client端发送FIN报文； Client端收到FIN报文后，向服务端发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重发FIN报文。Server端收到ACK后， Client端等待了(30s,2分钟)后依然没有收到FIN报文，则证明Server端已正常关闭， Client端也可以关闭连接。</p>
                 <p>Fin+ack+fin+ack</p>
                 <p>&nbsp;</p>
                 <h3>TCP报文格式</h3>
-                <p><img src={require('../../img/1519113452507.jpg')} style={{height:"70%",width:"70%"}}/></p>
+                {/*<p><img src={require('../../img/1519113452507.jpg')} style={{height:"70%",width:"70%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/0a9a62263da701f7.jpg" style={{height:"70%",width:"70%"}}/></p>
                 <p>&gt;TCP的包是没有IP地址的，那是IP层上的事，但是有源端口和目标端口。</p>
                 <p>&gt;Sequence Number是包的序号，用来解决网络包乱序（reordering）问题。</p>
                 <p>&gt;Acknowledgement Number就是ACK——用于确认收到，用来解决不丢包的问题。</p>
@@ -39,7 +45,9 @@ class ARP extends Component {
                 <p>对于建立链接的3次握手，主要是要初始化Sequence Number 的初始值。通信的双方要互相通知对方自己的初始化的Sequence Number（——所以叫SYN，全称Synchronize Sequence Numbers。这个号要作为以后的数据通信的序号，以<strong>保证应用层接收到的数据不会因为网络上的传输的问题而乱序。</strong></p>
                 <p>如果使用keep-alive则以后的链接都会带上这个Sequence Number。</p>
                 <p>对于4次挥手，因为TCP是全双工的，所以，发送方和接收方都需要Fin和Ack。只不过，有一方是被动的，所以看上去就成了所谓的4次挥手。如果两边同时断连接，那就会就进入到CLOSING状态，然后到达TIME_WAIT状态。下图是双方同时断连接的示意图：</p>
-                <p><img src={require('../../img/1519113851296.jpg')} style={{height:"45%",width:"45%"}}/></p>
+               {/* <p><img src={require('../../img/1519113851296.jpg')} style={{height:"45%",width:"45%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/5774993d6db291bc.jpg" style={{height:"70%",width:"70%"}}/></p>
                 <p>另外，有几个事情需要注意一下：</p>
                 <p>&gt;关于建立连接时SYN超时。试想一下，如果server端接到了clien发的SYN后回了SYN-ACK后 client掉线了，server端没有收到client回来的ACK，那么，这个连接处于一个中间状态，即没成功，也没失败。于是，server端如果在一定时间内没有收到的TCP会重发SYN-ACK。在Linux下，默认重试次数为5次，重试的间隔时间从1s开始每次都翻售，5次的重试时间间隔为 1s, 2s, 4s, 8s, 16s，总共31s，第5次发出后还要等32s都知道第5次也超时了，所以，总共需要 1s + 2s + 4s+ 8s+ 16s + 32s = 2^6 -1 = 63s，TCP才会把断开这个连接。</p>
                 <p>&gt;关于SYN Flood攻击。一些恶意的人就为此制造了SYN Flood攻击——给服务器发了一个SYN后，就下线了，于是服务器需要默认等63s才会断开连接，这样，攻击者就可以把服务器的syn连接的队列耗尽，让正常的连接请求不能处理。于是，Linux下给了一个叫tcp_syncookies的参数来应对这个事——当SYN队列满了后，TCP会通过源地址端口、目标地址端口和时间戳打造出一个特别的Sequence Number发回去（又叫cookie），如果是攻击者则不会有响应;如果是正常连接，则会把这个 SYN Cookie发回来，然后服务端可以通过cookie建连接（即使你不在SYN队列中）。请注意，请先千万别用tcp_syncookies来处理正常的大负载的连接的情况。因为，synccookies是妥协版的TCP协议，并不严谨。对于正常的请求，你应该调整三个TCP参数可供你选择，第一个是：tcp_synack_retries 可以用他来减少重试次数；第二个是：tcp_max_syn_backlog，可以增大SYN连接数；第三个是：tcp_abort_on_overflow 处理不过来干脆就直接拒绝连接了。</p>
@@ -64,11 +72,15 @@ class ARP extends Component {
                 <p><strong>快速重传机制</strong></p>
                 <p>    于是，TCP引入了一种叫Fast Retransmit 的算法，不以时间驱动，而以数据驱动重传。也就是说，如果，包没有连续到达，就ack最后那个可能被丢了的包，如果发送方连续收到3次相同的ack，就重传。Fast Retransmit的好处是不用等timeout了再重传。</p>
                 <p>    比如：如果发送方发出了1，2，3，4，5份数据，第一份先到送了，于是就ack回2，结果2因为某些原因没收到，3到达了，于是还是ack回2，后面的4和5都到了，但是还是ack回2，因为2还是没有收到，于是发送端收到了三个ack=2的确认，知道了2还没有到，于是就马上重转2。然后，接收端收到了2，此时因为3，4，5都收到了，于是ack回6。</p>
-                <p><img src={require('../../img/1519114946899.jpg')} style={{height:"45%",width:"45%"}}/></p>
+                {/*<p><img src={require('../../img/1519114946899.jpg')} style={{height:"45%",width:"45%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/3910456c81a42870.jpg" style={{height:"70%",width:"70%"}}/></p>
                 <p>对于上面的示例来说，还是有个问题：是重传#2呢还是重传#2，#3，#4，#5呢？因为发送端并不清楚这连续的3个ack(2)是谁传回来的？</p>
                 <p><strong>SACK 方法</strong></p>
                 <p>    另外一种更好的方式叫：Selective Acknowledgment (SACK)，这种方式需要在TCP头里加一个SACK的东西，ACK还是Fast Retransmit的ACK，SACK则是汇报收到的数据碎版。</p>
-                <p><img src={require('../../img/1519115044433.jpg')} style={{height:"45%",width:"45%"}}/></p>
+                {/*<p><img src={require('../../img/1519115044433.jpg')} style={{height:"45%",width:"45%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/e327a3f113128d4b.jpg" style={{height:"70%",width:"70%"}}/></p>
                 <p>SACK会消费发送方的资源，试想，如果一个攻击者给数据发送方发一堆SACK的选项，这会导致发送方开始要重传甚至遍历已经发出的数据，这会消耗很多发送端的资源。</p>
                 <p>&nbsp;</p>
                 <p><strong>TCP的RTT算法</strong></p>
@@ -89,7 +101,9 @@ class ARP extends Component {
                 <p><strong>TCP滑动窗口</strong></p>
                 <p>   TCP必需要解决的可靠传输以及包乱序（reordering）的问题，所以，TCP必需要知道网络实际的数据处理带宽或是数据处理速度，这样才不会引起网络拥塞，导致丢包。</p>
                 <p>    所以，TCP引入了一些技术和设计来做网络流控，Sliding Window是其中一个技术。前面我们说过，TCP头里有一个字段叫Window，又叫Advertised-Window，这个字段是接收端告诉发送端自己还有多少缓冲区可以接收数据。于是发送端就可以根据这个接收端的处理能力来发送数据，而不会导致接收端处理不过来。为了说明滑动窗口，我们需要先看一下TCP缓冲区的一些数据结构：</p>
-                <p><img src={require('../../img/1519115565873.jpg')} style={{height:"45%",width:"45%"}}/></p>
+                {/*<p><img src={require('../../img/1519115565873.jpg')} style={{height:"45%",width:"45%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/889bf2d131c4e263.jpg" style={{height:"70%",width:"70%"}}/></p>
                 <p>上图中，我们可以看到：</p>
                 <p>接收端LastByteRead指向了TCP缓冲区中读到的位置，NextByteExpected指向的地方是收到的<strong>连续包</strong>的最后一个位置，LastByteRcved指向的是收到的包的最后一个位置，我们可以看到中间有些数据还没有到达，所以有数据空白区。</p>
                 <p>发送端的LastByteAcked指向了被接收端Ack过的位置（表示成功发送确认），LastByteSent表示发出去了，但还没有收到成功确认的Ack，LastByteWritten指向的是上层应用正在写的地方。</p>
@@ -97,16 +111,21 @@ class ARP extends Component {
                 <p>于是：接收端在给发送端回ACK中会汇报自己的AdvertisedWindow = MaxRcvBuffer – LastByteRcvd – 1;</p>
                 <p>而发送方会根据这个窗口来控制发送数据的大小，以保证接收方可以处理。</p>
                 <p>下面我们来看一下<strong>发送方</strong>的滑动窗口示意图：</p>
-                <p><img src={require('../../img/1519115562544.jpg')} style={{height:"65%",width:"65%"}}/></p>
+                {/*<p><img src={require('../../img/1519115562544.jpg')} style={{height:"65%",width:"65%"}}/></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/94b39b76b9cb3669.jpg" style={{height:"70%",width:"70%"}}/></p>
                 <p>上图中分成了四个部分，分别是：（其中那个黑模型就是滑动窗口）</p>
                 <p>#1已收到ack确认的数据。</p>
                 <p>#2发还没收到ack的。</p>
                 <p>#3在窗口中还没有发出的（接收方还有空间）。</p>
                 <p>#4窗口以外的数据（接收方没空间）</p>
                 <p>下面是个滑动后的示意图（新收到4个ack，并发出了46-51的字节）：</p>
-                <p><img src={require('../../img/1519115558747.jpg')} style={{height:"65%",width:"65%"}}/></p>
+               {/* <p><img src={require('../../img/1519115558747.jpg')} style={{height:"65%",width:"65%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/fdba94312026b1f1.jpg" style={{height:"70%",width:"70%"}}/></p>
                 <p>下面我们来看一个接受端控制发送端的图示：</p>
-                <p><img src={require('../../img/1519116246368.jpg')} style={{height:"70%",width:"70%"}}/></p>
+                {/*<p><img src={require('../../img/1519116246368.jpg')} style={{height:"70%",width:"70%"}}/></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/1117d9c6f9883fea.jpg" style={{height:"70%",width:"70%"}}/></p>
+
                 <p>&nbsp;</p>
             </div>
         );

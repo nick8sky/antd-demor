@@ -10,7 +10,9 @@ class ICMP extends Component {
                 <p>ICMP协议大致分为两类，一种是查询报文，一种是差错报文。查询报文由发送者发出，差错报文是由出错的主机返回发给源数据包的发送者。</p>
                 <p>PING可以说是ICMP的最著名的应用，系统自带工具当某一个网站上不去的时候。通常会ping一下这个网站，ping会回显一些有用的信息。 </p>
                 <p>ICMP 报文格式：</p>
-                <p><img src={require('../../img/WX20180220-145426@2x.png')} style={{height:"45%",width:"45%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180220-145426@2x.png')} style={{height:"45%",width:"45%"}}/></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/a23c39a64c14e933.png" style={{height:"45%",width:"45%"}}/></p>
                 <p><strong>ICMP（网络控制报文协议）分为：差错报告报文和查询报文</strong></p>
                 <p>（1）<strong>差错报告报文：</strong></p>
                 <p>ICMP不能纠错，只能检查错误，发现错误报告给最初的数据源。其数据部分包含两部分：初始IP首部和数据报前8字节（TCP或udp 前8字节包含源端口和目的端口）</p>

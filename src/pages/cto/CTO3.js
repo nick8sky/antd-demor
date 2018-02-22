@@ -85,10 +85,13 @@ class CTO3 extends Component {
                 <p>&nbsp;</p>
                 <p>&quot;这个项目的架构是什么？&quot;</p>
                 <p>对方爽快的回答：&quot;Spring+Struts+Hibernate。&quot;这位很可能就不是架构师了，因为这仅仅是技术Stack。</p>
-                <p><img src={require('../../img/1518965336960.jpg')} style={{height:"100%",width:"100%"}}/></p>
+               {/* <p><img src={require('../../img/1518965336960.jpg')} style={{height:"100%",width:"100%"}}/></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/37402fde3bbc208f.jpg" style={{height:"100%",width:"100%"}}/></p>
+
                 <p>&nbsp;</p>
                 <p>又如：</p>
-                <p><img src={require('../../img/WX20180218-225930@2x.png')}  style={{height:"80%",width:"80%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180218-225930@2x.png')}  style={{height:"80%",width:"80%"}}/></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/85f1f176e8125a36.png" style={{height:"100%",width:"100%"}}/></p>
                 <p>&nbsp;</p>
             </div>
         );

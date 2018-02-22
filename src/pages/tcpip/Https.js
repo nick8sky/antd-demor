@@ -39,18 +39,25 @@ class HTTPS extends Component {
                 <p>3）苹果要求 2017 年App Store 中的所有应用都必须使用 HTTPS 加密连接；</p>
                 <p>4）当前国内炒的很火热的微信小程序也要求必须使用 HTTPS 协议；</p>
                 <p>5）新一代的 HTTP/2 协议的支持需以 HTTPS 为基础。</p>
-                <p><img src={require('../../img/423544678.JPG')}  /></p>
+                {/*<p><img src={require('../../img/423544678.JPG')}  /></p>*/}
+
+
+                <p><img src="http://i4.bvimg.com/633340/571ef16975536dfd.jpg"  /></p>
                 <p>如上图所示 HTTPS 相比 HTTP 多了一层 SSL/TLS</p>
                 <p>SSL（Secure Socket Layer，安全套接字层）：1994年为 Netscape 所研发，SSL 协议位于 TCP/IP 协议与各种应用层协议之间，为数据通讯提供安全支持。</p>
                 <p>TLS（Transport Layer Security，传输层安全）：其前身是 SSL，它最初的几个版本（SSL 1.0、SSL 2.0、SSL 3.0）由Netscape 开发(（顺便插一句，网景公司不光发明了 SSL，还发明了很多 Web 的基础设施——比如“CSS 样式表”和“JS 脚本”）)，1999年从 3.1 开始被 IETF 标准化并改名，发展至今已经有 TLS 1.0、TLS 1.1、TLS 1.2 三个版本。SSL3.0和TLS1.0由于存在安全漏洞，已经很少被使用到。TLS 1.3 改动会比较大，目前还在草案阶段，目前使用最广泛的是TLS 1.1、TLS 1.2。</p>
                 <p><strong>HTTP 向 HTTPS 演化的过程</strong></p>
                 <p>第一步：为了防止上述现象的发生，人们想到一个办法：对传输的信息加密（即使黑客截获，也无法破解）</p>
-                <p><img src={require('../../img/453wetgfdgfhdd.JPG')} /></p>
+                {/*<p><img src={require('../../img/453wetgfdgfhdd.JPG')} /></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/758e06fc8bdae81a.jpg"/></p>
                 <p>如上图所示，此种方式属于对称加密，双方拥有相同的密钥，信息得到安全传输，但此种方式的缺点是：</p>
                 <p>（1）不同的客户端、服务器数量庞大，所以双方都需要维护大量的密钥，维护成本很高</p>
                 <p>（2）因每个客户端、服务器的安全级别不同，密钥极易泄露</p>
                 <p>第二步：既然使用对称加密时，密钥维护这么繁琐，那我们就用非对称加密试试</p>
-                <p><img src={require('../../img/453wetgfdgfhdd.JPG')}  /></p>
+                {/*<p><img src={require('../../img/453wetgfdgfhdd.JPG')}  /></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/4edaf076e2b3fd54.jpg"  /></p>
                 <p>如上图所示，客户端用公钥对请求内容加密，服务器使用私钥对内容解密，反之亦然，但上述过程也存在缺点：</p>
                 <p>（1）公钥是公开的（也就是黑客也会有公钥），所以第 ④ 步私钥加密的信息，如果被黑客截获，其可以使用公钥进行解密，获取其中的内容</p>
                 <p>第三步：非对称加密既然也有缺陷，那我们就将对称加密，非对称加密两者结合起来，发挥两者的各自的优势 。</p>
@@ -95,9 +102,13 @@ class HTTPS extends Component {
                 <p> </p>
                 <p>加密算法一般分为两种，一种是非对称加密(也叫公钥加密)，另外一种是对称加密(也叫密钥加密)。</p>
                 <p>非对称加密 是加密和解密使用的不是同一个密钥。如下图：</p>
-                <p><img src={require('../../img/201702241048377320.jpg')} /></p>
+                {/*<p><img src={require('../../img/201702241048377320.jpg')} /></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/69f81bb25e4181e7.jpg" /></p>
                 <p>对称加密  是加密和解密都使用的是同一个密钥。如下图：</p>
-                <p><img src={require('../../img/201702241048377910.jpg')}  /></p>
+                {/*<p><img src={require('../../img/201702241048377910.jpg')}  /></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/89e662ea89f0a812.jpg" /></p>
 
             </div>
         );

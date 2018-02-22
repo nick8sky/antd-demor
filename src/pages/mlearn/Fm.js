@@ -29,10 +29,13 @@ class Fm extends Component {
                 <p>v∈R<sup>n*k</sup> ， &lt;v<sub>i</sub>,v<sub>j</sub>> 表示的是两个大小为 k 的向量之间的点积： </p>
                 <p><img src={require('../../img/WX20180217-101523@2x.png')} style={{height:"25%",width:"25%"}}/></p>
                 <p>与线性模型相比，FM的模型就多了后面特征组合的部分，在基本线性回归模型的基础上引入交叉项；</p>
-                <p><img src={require('../../img/WX20180217-101907@2x.png')} style={{height:"80%",width:"80%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180217-101907@2x.png')} style={{height:"80%",width:"80%"}}/></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/6fc2fa56de78621a.png" style={{height:"80%",width:"80%"}}/></p>
                 <p>损失函数：</p>
-                <p><img src={require('../../img/WX20180217-102105@2x.png')} style={{height:"50%",width:"50%"}}/></p>
-                <p><img src={require('../../img/WX20180217-102211@2x.png')} style={{height:"60%",width:"60%"}}/></p>
+                {/*<p><img src={require('../../img/WX20180217-102105@2x.png')} style={{height:"50%",width:"50%"}}/></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/b27f541e2c97a08f.png" style={{height:"80%",width:"80%"}}/></p>
+               {/* <p><img src={require('../../img/WX20180217-102211@2x.png')} style={{height:"60%",width:"60%"}}/></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/5121f587dfc60b71.png" style={{height:"80%",width:"80%"}}/></p>
                 <p>使用SGD比较常见。</p>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>

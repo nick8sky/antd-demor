@@ -22,18 +22,18 @@ class DevUtils extends Component {
             <div>
                 <h2>开发工具合集</h2>
                 <Collapse accordion>
-                    <Panel header="Maven">
+                    <Panel header="Maven 使用命令">
                         <p><Maven/></p>
                     </Panel>
-                    <Panel header="Git" >
+                    <Panel header="Git 使用命令" >
                         <p>
                            <Git/>
                         </p>
                     </Panel>
-                    <Panel header="Linux">
+                    <Panel header="Linux 使用命令">
                         <p><Linux/></p>
                     </Panel>
-                    <Panel header="React">
+                    <Panel header="React 使用命令">
                         <p><React1/></p>
                     </Panel>
                 </Collapse>

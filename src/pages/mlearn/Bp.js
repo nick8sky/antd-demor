@@ -6,7 +6,10 @@ class Bp extends Component {
             <div>
                 <h2>BP神经网络 back propagation</h2>
                 <p>神经网络就是模拟人的大脑的神经单元的工作方式，但进行了很大的简化，神经网络由很多神经网络层构成，而每一层又由许多单元组成，第一层叫输入层，最后一层叫输出层，中间的各层叫隐藏层，<strong>在BP神经网络中，只有相邻的神经层的各个单元之间有联系，除了输出层外，每一层都有一个偏置结点</strong>：</p>
-                <p><img src={require('../../img/5e4d414cgw1evkbht8fa3j20ac08xdgn.jpg')} style={{height:"30%",width:"30%"}}/></p>
+                {/*<p><img src={require('../../img/5e4d414cgw1evkbht8fa3j20ac08xdgn.jpg')} style={{height:"30%",width:"30%"}}/></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/ca6c6aa115eeceae.jpg" style={{height:"30%",width:"30%"}}/></p>
+
+
                 <p>虽然图中隐藏层只画了一层，但其层数并没有限制，传统的神经网络学习经验认为一层就足够好，而最近的深度学习不这么认为。<strong>偏置结点是为了描述训练数据中没有的特征，偏置结点对于下一层的每一个结点的权重的不同而生产不同的偏置，于是可以认为偏置是每一个结点（除输入层外）的属性。</strong></p>
                 <p>&nbsp;</p>
                 <p>在描述BP神经网络的训练之前，我们先来看看神经网络各层都有哪些属性：</p>
@@ -33,7 +36,9 @@ class Bp extends Component {
                 <p>    for record:dataset:</p>
                 <p>        trainModel(record)</p>
                 <p>首先设置输入层的输出值，假设属性的个数为100，那我们就设置输入层的神经单元个数为100，输入层的结点Ni为记录第i维上的属性值xi。对输入层的操作就这么简单，之后的每层就要复杂一些了，除输入层外，其他各层的输入值是上一层输入值按权重累加的结果值加上偏置，每个结点的输出值等该结点的输入值作变换:</p>
-                <p><img src={require('../../img/5e4d414cgw1evkbhudbyzj20n00brdhy.jpg')} style={{height:"50%",width:"50%"}}/></p>
+                {/*<p><img src={require('../../img/5e4d414cgw1evkbhudbyzj20n00brdhy.jpg')} style={{height:"50%",width:"50%"}}/></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/be6295c77bf45ed8.jpg" style={{height:"50%",width:"50%"}}/></p>
+
                 <h3>激活函数</h3>
                 <p>激活函数是反映下层输入对上层节点刺激脉冲强度的函数，一般取为(0,1)内连续取值Sigmoid函数：                        f(x)=1/(1+e-x)    <br/></p>
                 <p>&nbsp;</p>

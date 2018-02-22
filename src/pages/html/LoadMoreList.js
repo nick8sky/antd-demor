@@ -6,9 +6,27 @@ import {Link} from 'react-router-dom';
 
 const data = [
     {
+        "title": "异地多活IDC机房架构",
+        "description": "单机房一旦死机，断电、维护根本无法挽回整个数据，想离线读取等都不行。当一个机房不可用，所有的业务就都不可用。系统 要求业务离用户最近，南方的用户连南方的机房，北方的用户连北方的机房，国外的用户连国外的机房。大陆的网络和国外的网络有一定的隔离性，如果没有做多机房的连通性，数据的传输和实时性就会有问题。",
+        "url": "idc",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "架构",
+        "updateTime": "2018-02-21"
+    },
+    {
+        "title": "乐观锁和悲观锁的区别",
+        "description": "悲观锁每次去拿数据的时候都认为别人会修改，乐观锁每次去拿数据的时候都认为别人不会修改。",
+        "url": "pessimisticLock",
+        "mi": 1.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-02-21"
+    },
+    {
         "title": "why Kotlin",
         "description": "或许该尝试用Kotlin写新的应用了。",
-        "url": "koltin1",
+        "url": "kotlin1",
         "mi": 2.0,
         "typeColor": "cyan",
         "typeName": "JAVA",
@@ -27,7 +45,7 @@ const data = [
         "title": "传输控制协议",
         "description": "TCP是一个面向连接的协议。无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。本章将详细讨论一个TCP连接是如何建立的以及通信结束后是如何终止的。",
         "url": "tcp",
-        "mi": 2.0,
+        "mi": 4.0,
         "typeColor": "cyan",
         "typeName": "Tcp/Ip",
         "updateTime": "2018-02-20"
@@ -147,7 +165,7 @@ const data = [
         "url": "c3",
         "mi": 4.0,
         "typeColor": "cyan",
-        "typeName": "onway",
+        "typeName": "架构",
         "updateTime": "2018-02-18"
     },
     {
@@ -156,7 +174,7 @@ const data = [
         "url": "c2",
         "mi": 3.0,
         "typeColor": "cyan",
-        "typeName": "onway",
+        "typeName": "架构",
         "updateTime": "2018-02-18"
     },
     {
@@ -165,7 +183,7 @@ const data = [
         "url": "c1",
         "mi": 2.5,
         "typeColor": "cyan",
-        "typeName": "onway",
+        "typeName": "架构",
         "updateTime": "2018-02-18"
     },
     {
@@ -644,7 +662,7 @@ class LoadMoreList extends React.Component {
                 onCancel={this.handleCancel}
                 >
                 <p>
-                    <p><img src={require('../../img/WX20180220-022732@2x.png')} style={{height:"100%",width:"100%"}}/></p>
+                    <p><img src="http://i4.bvimg.com/633340/e057c3f6888bf1a5t.jpg" style={{height:"100%",width:"100%"}}/></p>
                     <Input
                     placeholder="请输入图中的微信号或验证码"
                     prefix={<Icon type="question-circle-o" style={{ color: 'rgba(0,0,0,.25)' }} />}

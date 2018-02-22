@@ -28,7 +28,8 @@ class Btree1 extends Component {
 
                 </ul>
                 <p>B 树和B+树的区别图：</p>
-                <p><img src={require('../../img/290050088914733.png')} /></p>
+               {/* <p><img src={require('../../img/290050088914733.png')} /></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/3cf86b1170e0be89.png" /></p>
                 <p>B/B+树也经常用做数据库的索引，在mysql的索引原理详细讲解。</p>
 
 

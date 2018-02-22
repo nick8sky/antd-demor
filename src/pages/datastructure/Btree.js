@@ -37,12 +37,16 @@ class Btree extends Component {
                 <p>
                     2）但如果在内节点中，由于每一个key左右都有一个子树，删除后会违背B树的定义，因此必须进行调整。</p>
                 <p>如要删除M，而M的前子节点为(DHK)，则用K替换M，并递归的删除K。 </p>
-                <p><img src={require('../../img/20160427125925949.png')} /></p>
+               {/* <p><img src={require('../../img/20160427125925949.png')} /></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/462b644158bb3fc9.jpg" /></p>
                 <p>如要删除P，用Q替换P，并递归的删除Q。 </p>
-                <p><img src={require('../../img/20160427130239185.png')} /></p>
+                {/*<p><img src={require('../../img/20160427130239185.png')} /></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/1a9c0037c9c9f755.jpg"/></p>
                 <p>3）若x中key前后子节点中关键字都少于t个，则将左右节点与key合并，然后再完成删除操作 </p>
                 <p>例：要删除P，y中只有一个关键字N，z中也只有一个关键字Q，因此首先将N、P、Q合并，然后删除P。 </p>
-                <p><img src={require('../../img/20160427130504022.png')} /></p>
+                {/*<p><img src={require('../../img/20160427130504022.png')} /></p>*/}
+                <p><img src="http://i4.bvimg.com/633340/a8b78ce74f60963d.jpg" /></p>
+
 
             </div>
         );

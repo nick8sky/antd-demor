@@ -29,7 +29,9 @@ class ARP extends Component {
                 </ol>
                 <p>6.源主机收到 ARP 响应包后。将目的主机的 IP 和 MAC 地址写入 ARP 列表，并利用此信息发送数据。如果源主机一直没有收到 ARP 响应数据包，表示 ARP 查询失败。</p>
                 <p><strong>报文格式</strong></p>
-                <p><img src={require('../../img/20170625231543967.png')} /></p>
+               {/* <p><img src={require('../../img/20170625231543967.png')} /></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/f387a639d12a4482.png" /></p>
                 <p>OP ： 表示ARP的消息类型。
                     1：ARP Request；
                     2：ARP Reply
@@ -41,10 +43,14 @@ class ARP extends Component {
                 <li>首先，主机A想要向主机B发送消息，但它不知道主机B的MAC地址，只知道主机B的IP地址。这时，主机A会在当前局域网下以广播的形式发送ARP请求数据报,表示主机A想知道主机B的MAC地址：</li>
 
                 </ol>
-                <p><img src={require('../../img/20170304155151065.png')} /></p>
+                {/*<p><img src={require('../../img/20170304155151065.png')} /></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/7a252863ae1f6f2f.png" /></p>
                 <ol start='2' >
                 <li><p>由于是广播，所以在本局域网上的所有主机都会收到主机A发送的ARP数据报， 除了主机B外，在这个局域网内的其他主机都会把数据报丢弃</p>
-                <p><img src={require('../../img/20170304155218573.png')} /></p>
+                {/*<p><img src={require('../../img/20170304155218573.png')} /></p>*/}
+
+                <p><img src="http://i4.bvimg.com/633340/f7a593cd0d2a661e.png" /></p>
                 </li>
 
                 </ol>
