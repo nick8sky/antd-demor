@@ -111,7 +111,7 @@ class DraftList  extends React.Component {
                             title={
                                 <span>
 
-                                 <a href={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></a>
+                                 <a href={item.url}> <span className="link">{item.title}</span></a>
                                 </span>
                             }
                             description= {item.description}

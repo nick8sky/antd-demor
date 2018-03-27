@@ -7,6 +7,16 @@ import {Link} from 'react-router-dom';
 const data = [
 
     {
+        "title": "和女朋友聊天如何避免一问一答式的对话?",
+        "description": "怎么避免一问一答式的对话呢？很简单，不要抛问句！",
+        "url": "talkwithu",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "生活",
+        "updateTime": "2018-03-01"
+    },
+
+    {
         "title": "[转]巴黎最后的探戈",
         "description": "时常能想起这部电影中急促却又充满着遥远乡愁的爵士音乐，那些仿佛自原始蛮荒的场景中传来的鼓点，夹杂着岁月流逝的沙沙声，与时而情绪激动歇斯底里，时而平滑如水行走如风的萨克斯。",
         "url": "mv1",
@@ -52,6 +62,12 @@ const data = [
 class LoadMoreList extends React.Component {
     constructor(props) {
         super(props);
+        if(window.erred && window.erred > 3 && window.erred  < 6){
+            message.error('nick不欢迎你，请离开本网站');
+            window.erred = window.erred +1 ;
+        }else if(window.erred && window.erred > 5 ){
+            window.location.replace("http://news.baidu.com/")
+        }
         /*console.log(props);*/
         this.state = {
             loading: true,
@@ -63,13 +79,7 @@ class LoadMoreList extends React.Component {
             total :0,
             data: [],
         }
-        /*console.log(props);*/
-        const  q = props.location.search ;
-        if(q){
-            if(q =='?1989' || q== '?2018'){
-                window.needInput = 1 ;
-            }
-        }
+
     }
 
     pigeNum = 1;
@@ -181,13 +191,13 @@ class LoadMoreList extends React.Component {
         return (
             <div>
             <Modal
-                title="添加加微信好友,请注明github"
+                title="添加微信好友,请注明github"
                 visible={this.state.visible}
                 onOk={this.handleOk}
                 onCancel={this.handleCancel}
                 >
                 <p>
-                    <p><img src="http://i4.bvimg.com/633340/e057c3f6888bf1a5t.jpg" style={{height:"100%",width:"100%"}}/></p>
+                    <p><img src="https://gitee.com/nick070809/pics/raw/master/home/wx.png" style={{height:"100%",width:"100%"}}/></p>
                     <Input
                     placeholder="请输入图中的微信号或验证码"
                     prefix={<Icon type="question-circle-o" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -210,7 +220,7 @@ class LoadMoreList extends React.Component {
                             title={
                                 <span>
 
-                                 <Link to={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></Link>
+                                 <Link to={item.url}> <span className="link">{item.title}</span></Link>
                                 </span>
                             }
                             description={

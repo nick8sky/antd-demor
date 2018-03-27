@@ -1,14 +1,120 @@
-import {List, Button, Spin,Icon,Rate,Tag,message,Modal ,Input} from 'antd';
+import {List, Button, Spin, Icon, Rate, Tag, message, Modal, Input} from 'antd';
 import React from 'react';
 import {Link} from 'react-router-dom';
 
 
-
 const data = [
-
     {
-        "title": "oracle",
-        "description": "暂无",
+        "title": "MyCat架构-路由模块",
+        "description": "MyCat路由模块，大致上包括SQL语句分类，SQL语义解析，SQL语句改写，全局ID生成。",
+        "url": "mycat6",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-04"
+    },
+    {
+        "title": "MyCat架构-连接模块",
+        "description": "AbstractConnection中的NIOProcessor是对AbstractConnection进行管理的方法类，NIOHandler是处理AbstractConnection读取的数据的处理方法类，NIOSocketWR是执行以上方法的线程类。",
+        "url": "mycat5",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-04"
+    },
+    {
+        "title": "MyCat架构-前端通信篇",
+        "description": "从抓包内容上看到，前三次通信和tcp三次握手一致；mycat通过NIOAcceptor实现，NIOAcceptor主要完成绑定端口，注册OP_ACCEPT监听客户端连接事件，有客户连接，则放接受连接，将返回的channel封装成为FrontendConnection（AbstarctConnection的子类），从NIOReactorPool中拿出一个NIOReactor并将FrontendConnection交给它绑定。",
+        "url": "mycat4",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-04"
+    },
+    {
+        "title": "数据库路由中间件MyCat -使用篇",
+        "description": "暂无。",
+        "url": "mycat3",
+        "mi": 1.5,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-03"
+    },
+    {
+        "title": "数据库路由中间件MyCat -分片规则",
+        "description": "表被水平切分后，每个分片表所在的数据库就是一个分片节点, 一个分片节点对应一个数据库。一个分片节点只能保存每个分片表的一个分片，因为db中不允许出现同名的表。",
+        "url": "mycat2",
+        "mi": 3.0,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-03"
+    },
+    {
+        "title": "数据库路由中间件MyCat - 背景篇",
+        "description": "目前商用的数据库以及开源的数据库一般都不支持大规模自动扩展，单库上面存在着性能瓶颈。一般的，MySQL数据库单表超过1000W~2000W条记录时，性能就会有比较明显的下降。为了提升性能以及可以存储数据的量，我们需要分库分表。",
+        "url": "mycat1",
+        "mi": 3.0,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-03"
+    },
+    {
+        "title": "Mysql分库分表(二)",
+        "description": "Mysql分表和分区的区别、分库分表介绍与区别， 注意这里说的是三个概念。",
+        "url": "mysql9",
+        "mi": 3.0,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-03"
+    },
+    {
+        "title": "Mysql分库分表(一)",
+        "description": "当一张表的数据达到几千万时，你查询一次所花的时间会变多，如果有联合查询的话，我想有可能会死在那儿了。分表的目的就在于此，减小数据库的负担，缩短查询时间。",
+        "url": "mysql8",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-02"
+    },
+    {
+        "title": "Mysql负载均衡",
+        "description": "使用MySQL时随着时间的增长，用户量以及数据量的逐渐增加，访问量更是剧增，最终将会使MySQL达到某个瓶颈，那么MySQL的性能将会大大降低。",
+        "url": "mysql7",
+        "mi": 3.5,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-02"
+    },
+    {
+        "title": "Mysql实现主主复制",
+        "description": "主主复制即在两台MySQL主机内都可以变更数据，而且另外一台主机也会做出相应的变更。",
+        "url": "mysql6",
+        "mi": 3.5,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-02"
+    },
+    {
+        "title": "使用Spring实现读写分离",
+        "description": "我们一般应用对数据库而言都是“读多写少”，也就说对数据库读取数据的压力比较大，有一个思路就是说采用数据库集群的方案。",
+        "url": "mysql5",
+        "mi": 3.5,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-02"
+    },
+    {
+        "title": "Mysql实现主从复制",
+        "description": "主库有数据变更时，会通知备库的io线程，io线程建立一个TCP长连接，接下来主库的binlog dump线程会推送主库的binlog。在进行完一次HTTP操作后保持该TCP连接（HTTP/1.1起默认使用长连接）。只要Server端或Client端不提出关闭请求，或存在其他异常情况，两者间的连接将持续下去。",
+        "url": "mysql4",
+        "mi": 2.5,
+        "typeColor": "cyan",
+        "typeName": "数据库",
+        "updateTime": "2018-03-02"
+    },
+    {
+        "title": "oracle一定要使用三层嵌套进行分页查询？",
+        "description": "其实两层就可以，不过，两层嵌套查询不会用到oracle的外层条件内推机制，效率慢了点",
         "url": "oracle",
         "mi": 2.5,
         "typeColor": "cyan",
@@ -50,42 +156,31 @@ const data = [
         "typeColor": "cyan",
         "typeName": "数据库",
         "updateTime": "2018-02-18"
-    },
-    {
-        "title": "redis",
-        "description": "redis基本数据类型，事务，分布式锁，哨兵，集群模式",
-        "url": "redis",
-        "mi": 3,
-        "typeColor": "cyan",
-        "typeName": "数据库",
-        "updateTime": "2018-02-08"
     }
-
 ];
-
 
 
 class LoadMoreList extends React.Component {
     constructor(props) {
         super(props);
+        if (window.erred && window.erred > 3 && window.erred < 6) {
+            message.error('nick不欢迎你，请离开本网站');
+            window.erred = window.erred + 1;
+        } else if (window.erred && window.erred > 5) {
+            window.location.replace("http://news.baidu.com/")
+        }
         /*console.log(props);*/
         this.state = {
             loading: true,
             loadingMore: false,
             showLoadingMore: true,
-            remaining :0,
-            key:'',
+            remaining: 0,
+            key: '',
             visible: false,
-            total :0,
+            total: 0,
             data: [],
         }
-        /*console.log(props);*/
-        const  q = props.location.search ;
-        if(q){
-            if(q =='?1989' || q== '?2018'){
-                window.needInput = 1 ;
-            }
-        }
+
     }
 
     pigeNum = 1;
@@ -108,10 +203,10 @@ class LoadMoreList extends React.Component {
         if (this.pigeNum * pageSize >= data.length) {
             lastIndex = data.length;
         }
-        this.remaining = data.length - lastIndex ;
+        this.remaining = data.length - lastIndex;
         this.setState({
-            remaining: data.length - lastIndex ,
-            total:data.length,
+            remaining: data.length - lastIndex,
+            total: data.length,
         });
 
         for (let j = (this.pigeNum - 1) * pageSize; j < lastIndex; j += 1) {
@@ -126,11 +221,11 @@ class LoadMoreList extends React.Component {
 
     onLoadMore = () => {
 
-        if(!window.needInput || window.needInput != 1){
+        if (!window.needInput || window.needInput != 1) {
             this.setState({
                 visible: true,
             });
-            return ;
+            return;
         }
         /*if(!canLoad){
             let answer=prompt("添加微信获取验证码,请注明github");
@@ -162,9 +257,9 @@ class LoadMoreList extends React.Component {
         this.setState({
             visible: false,
         });
-        if(this.state.key && (this.state.key == '1989' || this.state.key == '2018' || this.state.key == 'nick070809')){
-            window.needInput = 1 ;
-            this.onLoadMore() ;
+        if (this.state.key && (this.state.key == '1989' || this.state.key == '2018' || this.state.key == 'nick070809')) {
+            window.needInput = 1;
+            this.onLoadMore();
         }
     }
     handleCancel = (e) => {
@@ -174,70 +269,74 @@ class LoadMoreList extends React.Component {
     }
     emitEmpty = () => {
         this.keyInput.focus();
-        this.setState({ key: '' });
+        this.setState({key: ''});
     }
     onChangeUserName = (e) => {
-        this.setState({ key: e.target.value });
+        this.setState({key: e.target.value});
     }
 
     render() {
-        const IconText = ({ type, text }) => (
-            <span> <Icon type={type} style={{ marginRight: 8 }} />
+        const IconText = ({type, text}) => (
+            <span> <Icon type={type} style={{marginRight: 8}}/>
                 {text}
             </span>
         );
-        const suffix = key ? <Icon type="close-circle" onClick={this.emitEmpty} /> : null;
-        const {loading, loadingMore, showLoadingMore, data,remaining,total,key} = this.state;
+        const suffix = key ? <Icon type="close-circle" onClick={this.emitEmpty}/> : null;
+        const {loading, loadingMore, showLoadingMore, data, remaining, total, key} = this.state;
         const loadMore = showLoadingMore ? (
             <div style={{textAlign: 'center', marginTop: 12, height: 32, lineHeight: '32px'}}>
                 {loadingMore && <Spin/>}
-                {!loadingMore && <Button onClick={this.onLoadMore}>  loading more, total {total} remaining {remaining}  </Button>}
+                {!loadingMore &&
+                <Button onClick={this.onLoadMore}> loading more, total {total} remaining {remaining}  </Button>}
             </div>
         ) : null;
         return (
             <div>
-            <Modal
-                title="添加加微信好友,请注明github"
-                visible={this.state.visible}
-                onOk={this.handleOk}
-                onCancel={this.handleCancel}
+                <Modal
+                    title="添加微信好友,请注明github"
+                    visible={this.state.visible}
+                    onOk={this.handleOk}
+                    onCancel={this.handleCancel}
                 >
-                <p>
-                    <p><img src="http://i4.bvimg.com/633340/e057c3f6888bf1a5t.jpg" style={{height:"100%",width:"100%"}}/></p>
-                    <Input
-                    placeholder="请输入图中的微信号或验证码"
-                    prefix={<Icon type="question-circle-o" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                    suffix={suffix}
-                    value={key}
-                    onChange={this.onChangeUserName}
-                    ref={node => this.keyInput = node}
-                /></p>
+                    <p>
+                        <p><img src="https://gitee.com/nick070809/pics/raw/master/home/wx.png"
+                                style={{height: "100%", width: "100%"}}/></p>
+                        <Input
+                            placeholder="请输入图中的微信号或验证码"
+                            prefix={<Icon type="question-circle-o" style={{color: 'rgba(0,0,0,.25)'}}/>}
+                            suffix={suffix}
+                            value={key}
+                            onChange={this.onChangeUserName}
+                            ref={node => this.keyInput = node}
+                        /></p>
 
-            </Modal>
-            <List
-                className="demo-loadmore-list"
-                loading={loading}
-                itemLayout="horizontal"
-                loadMore={loadMore}
-                dataSource={data}
-                renderItem={item => (
-                    <List.Item >
-                        <List.Item.Meta
-                            title={
-                                <span>
+                </Modal>
+                <List
+                    className="demo-loadmore-list"
+                    loading={loading}
+                    itemLayout="horizontal"
+                    loadMore={loadMore}
+                    dataSource={data}
+                    renderItem={item => (
+                        <List.Item>
+                            <List.Item.Meta
+                                title={
+                                    <span>
 
-                                 <Link to={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></Link>
+                                 <Link to={item.url}> <span className="link">{item.title}</span></Link>
                                 </span>
-                            }
-                            description={
-                                <span>{item.description }<p></p><Tag>{item.typeName}</Tag><Rate allowHalf defaultValue={item.mi} />|<IconText type="calendar" text={item.updateTime} />
+                                }
+                                description={
+                                    <span>{item.description}<p></p><Tag>{item.typeName}</Tag><Rate allowHalf
+                                                                                                   defaultValue={item.mi}/>|<IconText
+                                        type="calendar" text={item.updateTime}/>
                                 <br/></span>
                                 }
-                        />
-                    </List.Item>
+                            />
+                        </List.Item>
 
-                )}
-            />
+                    )}
+                />
             </div>
         );
     }

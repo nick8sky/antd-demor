@@ -22,7 +22,7 @@ class Mlearning0 extends Component {
                 <p>我们如何去求E_in和 E_out的关系呢？ </p>
                 <p>E_in是一个小集合样本里面的错误出现概率。E _out是一个大集合样本里面错误出现的概率。这个小集合和大集合都是服从同一分布的。 原来你肯定遇到过一个这样的概率论问题：让你统计一个非常大的集合里面，某一个事件出现的概率。我们当时是这么做的：从这个大集合里面去随机挑出来一个小集合，然后在这个小集合里面求出这个事件出现的概率，然后我们就可以很高兴的说大集合里面这个事件出现的概率就是这么多了。这个现在来看虽然当时的做法有些不严谨，不过确实是有一些合理性的。 霍夫丁不等式保证了我们的做法的合理的</p>
                 {/*<p><img src={require('../../img/20160420140222038.png')}/></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/ca3bb1bed869782f.png"/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/20160420140222038.png"/></p>
                 <p>在图片中可以看出，我们用抽样出来的橘色小球的概率去出现估计瓶子里橘色小球的概率。霍夫丁不等式保证了|v−μ|&gt;ε出现的概率有一个上界。 </p>
                 <p>可以把这种思想引入到机器学习中。</p>
                 <p>&nbsp;</p>
@@ -31,7 +31,7 @@ class Mlearning0 extends Component {
                 <p>P(∃h∈H.|E_in(h)−E_out(h)|&gt;ε)=P(|E_in(h1)−E_out(h1)|&gt;ε∪ ）U  P(E_in(h2)−E_out(h2) |&gt;ε∪）U...</p>
                 <p><strong>A∪B∪C发生的概率是小于每个事件发生概率之和：</strong></p>
                 {/*<p><img src={require('../../img/20160420154119974.png')}/></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/acf39dfcb9c97b37.png"/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/20160420154119974.png"/></p>
                 <p>所以必有：P(∃h∈H.|E_in(h)−E_out(h)|&gt;ε) &lt;=2kexp(−2ε^2N)</p>
                 <h4>假设空间是infinite（无限）的情况</h4>
                 <p>为什么要引入VC维？当假设空间是有限大的时候，我们就可以用假设空间里面包含的h的个数k去衡量这个算法所产生的模型的复杂程度。现在假设空间的大小是无限大的，我们没有假设空间的大小这种类似的衡量指标了，所以这个时候就需要引入了VC维。
@@ -48,7 +48,7 @@ class Mlearning0 extends Component {
                 <p>模型复杂度越大，E_in(h)就越接近0，可是E_out和E_in就越不接近，这时bias会变小，<strong>variance会变大</strong>，可能导致过拟合(overfitting)的问题。</p>
                 {/*<p><img src={require('../../img/20160420194745449.png')}/></p>*/}
 
-                <p><img src=" http://i4.bvimg.com/633340/127c4a2101f4e182.png"/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/20160420194745449.png"/></p>
                 <p>图中的out-of-sample error就是E_out，in-sample error就是E_in。</p>
                 <p>1、随着模型复杂度(model complexity)的变大，E_in会变得越来越小，不过减小速度越来越慢，到最后会趋于直线；</p>
                 <p>2、E_out是先减小，后变大的（这个减小过程可以理解成：刚开始模型复杂度不是特别大，E_out和E_in的差距很小，随着模型复杂度的增加，E_in的减小幅度非常大，虽然说E_out和E_in的差距会变大，不过这时的决定因素是E_in的减小，所以E_out(h)也会被带着减小。那个增加的过程的理解成：这个时候的模型复杂度已经很大了，随着模型复杂的增加，E_in的减小已经趋向于平缓了，这时E_out和E_in的差距变得越来大。</p>

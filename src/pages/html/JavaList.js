@@ -1,10 +1,87 @@
 import {List, Button, Spin,Icon,Rate,Tag,message,Modal ,Input} from 'antd';
 import React from 'react';
+
+
+
 import {Link} from 'react-router-dom';
 
-
-
 const data = [
+    {
+        "title": "Java 重入锁是怎么解决死锁的",
+        "description": "ReentrantLock 和synchronized 都是 可重入锁。",
+        "url": "java3",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-03-05"
+    },
+    {
+        "title": "Java GC日志分析及永久代的移除",
+        "description": "随着Java8的到来，我们再也见不到永久代了。但是这并不意味着类的元数据信息也消失了。这些数据被移到了一个与堆不相连的本地内存区域，这个区域就是我们要提到的元空间。",
+        "url": "jvm2",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-03-01"
+    },
+    {
+        "title": "Java常见的几种内存溢出及解决方法",
+        "description": "堆内存，栈内存，栈深度，老年代溢出及处理。",
+        "url": "jvm1",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-03-01"
+    },
+
+    {
+        "title": "Consul的ACL/DC配置使用",
+        "description": "暂无。",
+        "url": "consul2",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-02-28"
+    },
+
+    {
+        "title": "Consul简单使用集群配置，kv",
+        "description": "use Consul to discover providers of a given service. Using either DNS or HTTP, applications can easily find the services they depend upon。\n",
+        "url": "consul1",
+        "mi": 3.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-02-28"
+    },
+    {
+        "title": "僵尸进程的产生、发现及关闭",
+        "description": "ShutdownHook(钩子线程),在线上Java程序中经常遇到进程程挂掉，一些状态没有正确的保存下来，这时候就需要在JVM关掉的时候执行一些清理现场的代码。Java中得ShutdownHook提供了比较好的方案。\n",
+        "url": "java2",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-02-26"
+    },
+    {
+        "title": "如何优雅的关闭java进程",
+        "description": "ShutdownHook(钩子线程),在线上Java程序中经常遇到进程程挂掉，一些状态没有正确的保存下来，这时候就需要在JVM关掉的时候执行一些清理现场的代码。Java中得ShutdownHook提供了比较好的方案。\n",
+        "url": "java1",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-02-26"
+    },
+
+    {
+        "title": "协程",
+        "description": "起初人们喜欢同步编程，然后发现有一堆线程因为I/O卡在那里,并发上不去，资源严重浪费；然后出了异步（select,epoll,kqueue,etc）,将I/O操作交给内核线程,自己注册一个回调函数处理最终结果。\n",
+        "url": "jvmx",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-02-24"
+    },
+
 
     {
         "title": "乐观锁和悲观锁的区别",
@@ -16,13 +93,31 @@ const data = [
         "updateTime": "2018-02-21"
     },
     {
-        "title": "why Kotlin",
+        "title": "Kotlin入门介绍和基础语法",
         "description": "或许该尝试用Kotlin写新的应用了。",
         "url": "kotlin1",
         "mi": 2.0,
         "typeColor": "cyan",
         "typeName": "JAVA",
         "updateTime": "2018-02-20"
+    },
+    {
+        "title": "Kotlin使用",
+        "description": "如何使用Kotlin。",
+        "url": "kotlin2",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-02-24"
+    },
+    {
+        "title": "Kotlin中的协程",
+        "description": "一些耗时操作(网络IO、文件IO、CPU/GPU密集型任务)会阻塞线程直到操作完成,Kotlin的协程提供一种避免阻塞且更廉价可控的操作。",
+        "url": "kotlin3",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "JAVA",
+        "updateTime": "2018-02-24"
     },
     {
         "title": "jdk8",
@@ -67,6 +162,12 @@ const data = [
 class LoadMoreList extends React.Component {
     constructor(props) {
         super(props);
+        if(window.erred && window.erred > 3 && window.erred  < 6){
+            message.error('nick不欢迎你，请离开本网站');
+            window.erred = window.erred +1 ;
+        }else if(window.erred && window.erred > 5 ){
+            window.location.replace("http://news.baidu.com/")
+        }
         /*console.log(props);*/
         this.state = {
             loading: true,
@@ -78,13 +179,7 @@ class LoadMoreList extends React.Component {
             total :0,
             data: [],
         }
-        /*console.log(props);*/
-        const  q = props.location.search ;
-        if(q){
-            if(q =='?1989' || q== '?2018'){
-                window.needInput = 1 ;
-            }
-        }
+
     }
 
     pigeNum = 1;
@@ -195,14 +290,16 @@ class LoadMoreList extends React.Component {
         ) : null;
         return (
             <div>
+
+
             <Modal
-                title="添加加微信好友,请注明github"
+                title="添加微信好友,请注明github"
                 visible={this.state.visible}
                 onOk={this.handleOk}
                 onCancel={this.handleCancel}
                 >
                 <p>
-                    <p><img src="http://i4.bvimg.com/633340/e057c3f6888bf1a5t.jpg"  style={{height:"100%",width:"100%"}}/></p>
+                    <p><img src="https://gitee.com/nick070809/pics/raw/master/home/wx.png"  style={{height:"100%",width:"100%"}}/></p>
                     <Input
                     placeholder="请输入图中的微信号或验证码"
                     prefix={<Icon type="question-circle-o" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -225,7 +322,7 @@ class LoadMoreList extends React.Component {
                             title={
                                 <span>
 
-                                 <Link to={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></Link>
+                                 <Link to={item.url}> <span className="link">{item.title}</span></Link>
                                 </span>
                             }
                             description={

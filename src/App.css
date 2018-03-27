@@ -99,3 +99,29 @@ pre {
   background: transparent;
   border: 0;
 }
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.link{
+  font-size: 18px;
+  font-weight: 350;
+}
+.markdown-body, body {
+  font-family: Arial,"Hiragino Sans GB","冬青黑","Microsoft YaHei","微软雅黑",SimSun,"宋体",Helvetica,Tahoma,Arial sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+}
+
+body {
+  font: 13px/1.4 Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";
+  color: #333;
+  background-color: #fff;
+}
+

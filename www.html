@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>j1.md</title></head>
+<body><h2>系统安全</h2>
+<h3>syslog命令</h3>
+<p>syslog是Linux系统默认的日志守护进程。默认的syslog配置文件是/etc/syslog.conf文件。程序，守护进程和内核提供了访问系统的日志信息。因此，任何希望生成日志信息的程序都可以向 syslog 接口呼叫生成该信息。</p>
+<p>通常，syslog 接受来自系统的各种功能的信息，每个信息都包括重要级。/etc/syslog.conf 文件通知 syslogd 如何根据设备和信息重要级别来报告信息。</p>
+<p>cd   /var/log</p>
+<p> /var/log/messages — 包括整体系统信息，其中也包含系统启动期间的日志。此外，mail，cron，daemon，kern和auth等内容也记录在var/log/messages日志中。</p>
+<pre><code>Mar  9 19:40:01 izbp16docejzd653dhh943z systemd: Started Session 9451 of user root.
+Mar  9 19:40:01 izbp16docejzd653dhh943z systemd: Starting Session 9451 of user root.
+Mar  9 19:40:19 izbp16docejzd653dhh943z admin: this is a test log line
+Mar  9 19:40:32 izbp16docejzd653dhh943z consul[18550]: agent: Synced check &#39;service:xx-adxx&#39;
+Mar  9 19:40:32 izbp16docejzd653dhh943z consul[18550]: agent: Synced check &#39;service:x-mx&#39;
+Mar  9 19:40:32 izbp16docejzd653dhh943z consul[18550]: agent: Synced check &#39;service:x-x&#39; 
+</code></pre>
+<p>/var/log/dmesg — 包含内核缓冲信息（kernel ring buffer）。在系统启动时，会在屏幕上显示许多与硬件有关的信息。可以用dmesg查看它们。</p>
+<p>/var/log/boot.log — 包含系统启动时的日志。</p>
+<p> /var/log/daemon.log — 包含各种系统后台守护进程日志信息。</p>
+<p>/var/log/kern.log – 包含内核产生的日志，有助于在定制内核时解决问题。</p>
+<p> /var/log/yum.log — 包含使用yum安装的软件包信息。</p>
+<p>/var/log/cron — 每当cron进程开始一个工作时，就会将相关信息记录在这个文件中。</p>
+<h3>nohup命令</h3>
+<p>nohup命令可以将程序以忽略挂起信号的方式运行起来，被运行的程序的输出信息将不会显示到终端。</p>
+<p>使用nohup命令提交作业，如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件：</p>
+<pre><code>nohup command &gt; myout.file 2&gt;&amp;1 &amp;
+</code></pre>
+<h3>ps命令</h3>
+<p>ps命令用于报告当前系统的进程状态。可以搭配kill指令随时中断、删除不必要的程序。</p>
+<h3>useradd命令</h3>
+<p>useradd命令用于Linux中创建的新的系统用户。useradd可用来建立用户帐号。帐号建好之后，再用passwd设定帐号的密码．而可用userdel删除帐号。使用useradd指令所建立的帐号，实际上是保存在/etc/passwd文本文件中。</p>
+<pre><code>useradd nick
+</code></pre>
+<h3>userdel命令</h3>
+<p>userdel命令用于删除给定的用户，以及与用户相关的文件。若不加选项，则仅删除用户帐号，而不删除相关文件。</p>
+<pre><code>userdel linuxde       //删除用户linuxde，但不删除其家目录及文件；
+userdel -r linuxde    //删除用户linuxde，其家目录及文件一并删除；
+</code></pre>
+<h3>mount命令</h3>
+<p>mount命令用于加载文件系统到指定的加载点。此命令的最常用于挂载cdrom，使我们可以访问cdrom中的数据，因为你将光盘插入cdrom中，Linux并不会自动挂载，必须使用Linux mount命令来手动完成挂载。</p>
+<p>参数</p>
+<ul>
+<li><p>设备文件名：指定要加载的文件系统对应的设备名；</p>
+</li>
+<li><p>加载点：指定加载点目录。</p>
+<pre><code>mount -t auto /dev/cdrom /mnt/cdrom
+</code></pre>
+</li>
+
+</ul>
+<h3>umount命令</h3>
+<p>umount命令用于卸载已经加载的文件系统。利用设备名或挂载点都能umount文件系统，不过最好还是通过挂载点卸载，以免使用绑定挂载（一个设备，多个挂载点）时产生混乱。</p>
+<pre><code>umount -v /mnt/mymount/
+</code></pre>
+<p>&nbsp;</p>
+</body>
+</html>

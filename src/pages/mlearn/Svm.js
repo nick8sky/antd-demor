@@ -11,10 +11,10 @@ class Svm extends Component {
                 <h3>决策面</h3>
                 <p>面对一个线性可分的二分类问题，将正负样本分开的超平面，称为决策面。</p>
                 <p>对于线性可分的二分类问题而言，使用 感知机 算法，可以得到很多很多满足上述要求的决策面，比如下图中，就是可以将正负两类数据分开的两个决策面。</p>
-                <p><img src={require('../../img/Perceptron_cant_choose.png')} style={{height:"60%",width:"60%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/Perceptron_cant_choose.png" style={{height:"60%",width:"60%"}}/></p>
                 <p>那么，在这些决策面中，哪个决策面，才是最优的决策面呢？ </p>
                 <p>最大间隔分类器认为，决策面的泛化误差可以用训练样本集合中，离决策面最近的样本点到决策面的间隔（margin）来表示，离决策面最近的样本点。直观的来讲，最优决策面差不多就是下面这幅图中，中间的那个决策面。</p>
-                <p><img src={require('../../img/234903457.jpg')} style={{height:"40%",width:"40%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/234903457.png" style={{height:"40%",width:"40%"}}/></p>
                 <p>什么是间隔？
                     答：首先，要搞清楚是谁和谁的间隔，在这里指的是一个 训练样本点 和 决策面 之间的间隔。</p>
                 <p>那么，间隔又如何定义的呢？

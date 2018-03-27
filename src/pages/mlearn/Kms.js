@@ -12,10 +12,10 @@ class Kms extends Component {
                 <p>曼哈顿距离(Manhattan distance)</p>
                 <p>欧式距离(Euclidean distance) </p>
                 <p>对于欧式空间的样本数据，以平方误差和（sum of the squared error, SSE)作为聚类的目标函数，同时也可以衡量不同聚类结果好坏的指标：</p>
-                <p><img src={require('../../img/WX20180217-170302@2x.png')} style={{height:"20%",width:"20%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/WX20180217-170302@2x.png" style={{height:"20%",width:"20%"}}/></p>
                 <p>下图中给出了一个通过4次迭代聚类3个中心的例子：</p>
                 {/*<p><img src={require('../../img/399159-20160131182028552-1529699913.png')} style={{height:"75%",width:"75%"}}/></p>*/}
-                <p><img src=" http://i4.bvimg.com/633340/a37f6782955757ee.png" style={{height:"75%",width:"75%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/399159-20160131182028552-1529699913.png" style={{height:"75%",width:"75%"}}/></p>
 
 
                 <p>k-means存在缺点：</p>

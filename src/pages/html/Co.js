@@ -6,6 +6,82 @@ import {Link} from 'react-router-dom';
 
 const data = [
     {
+        "title": "如何管理时间",
+        "description": "什么事最重要，什么事最紧急的事。",
+        "url": "b1",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "架构",
+        "updateTime": "2018-02-28"
+    },
+
+
+
+
+    {
+        "title": "学习反模式(六)",
+        "description": "做技术，犹如修习一门武功。",
+        "url": "c9",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "架构",
+        "updateTime": "2018-02-28"
+    },
+    {
+        "title": "开发行为反模式(五)",
+        "description": "这些反行为模式，并不针对某些特定的个人。如果你不幸中招，千万不要懊恼，因为这实在太正常不过了，很多反模式的坑我也是亲身踩过的。",
+        "url": "c8",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "架构",
+        "updateTime": "2018-02-28"
+    },
+    {
+        "title": "开发反模式(四)",
+        "description": "java开发中常见的反模式代码一览。",
+        "url": "c7",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "架构",
+        "updateTime": "2018-02-27"
+    },
+    {
+        "title": "开发反模式(三)",
+        "description": "java开发中常见的反模式代码一览。",
+        "url": "c6",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "架构",
+        "updateTime": "2018-02-27"
+    },
+    {
+        "title": "架构反模式(二)",
+        "description": "架构设计中不合理。",
+        "url": "c5",
+        "mi": 3.0,
+        "typeColor": "cyan",
+        "typeName": "架构",
+        "updateTime": "2018-02-27"
+    },
+    {
+        "title": "反模式架构(一)",
+        "description": "研究表明，每6个项目就有5个被认为是不成功的，而且约1/3的项目在中途被取消，未取消的项目所消费的时间和成本是预计的两倍。",
+        "url": "c5",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "架构",
+        "updateTime": "2018-02-27"
+    },
+    {
+        "title": "架构师学习路线",
+        "description": "架构师还要根据业务发展阶段，提前预见发展到下一个阶段系统架构的解决方案，并且设计当前架构时将架构的升级扩展考虑进去，做到易于升级。",
+        "url": "c4",
+        "mi": 2.0,
+        "typeColor": "cyan",
+        "typeName": "架构",
+        "updateTime": "2018-02-22"
+    },
+    {
         "title": "异地多活IDC机房架构",
         "description": "单机房一旦死机，断电、维护根本无法挽回整个数据，想离线读取等都不行。当一个机房不可用，所有的业务就都不可用。系统 要求业务离用户最近，南方的用户连南方的机房，北方的用户连北方的机房，国外的用户连国外的机房。大陆的网络和国外的网络有一定的隔离性，如果没有做多机房的连通性，数据的传输和实时性就会有问题。",
         "url": "idc",
@@ -50,6 +126,13 @@ const data = [
 class LoadMoreList extends React.Component {
     constructor(props) {
         super(props);
+        if(window.erred && window.erred > 3 && window.erred  < 6){
+            message.error('nick不欢迎你，请离开本网站');
+            window.erred = window.erred +1 ;
+        }else if(window.erred && window.erred > 5 ){
+            window.location.replace("http://news.baidu.com/")
+        }
+
         /*console.log(props);*/
         this.state = {
             loading: true,
@@ -61,13 +144,7 @@ class LoadMoreList extends React.Component {
             total :0,
             data: [],
         }
-        /*console.log(props);*/
-        const  q = props.location.search ;
-        if(q){
-            if(q =='?1989' || q== '?2018'){
-                window.needInput = 1 ;
-            }
-        }
+
     }
 
     pigeNum = 1;
@@ -179,13 +256,13 @@ class LoadMoreList extends React.Component {
         return (
             <div>
             <Modal
-                title="添加加微信好友,请注明github"
+                title="添加微信好友,请注明github"
                 visible={this.state.visible}
                 onOk={this.handleOk}
                 onCancel={this.handleCancel}
                 >
                 <p>
-                    <p><img src="http://i4.bvimg.com/633340/e057c3f6888bf1a5t.jpg" style={{height:"100%",width:"100%"}}/></p>
+                    <p><img src="https://gitee.com/nick070809/pics/raw/master/home/wx.png" style={{height:"100%",width:"100%"}}/></p>
                     <Input
                     placeholder="请输入图中的微信号或验证码"
                     prefix={<Icon type="question-circle-o" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -208,7 +285,7 @@ class LoadMoreList extends React.Component {
                             title={
                                 <span>
 
-                                 <Link to={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></Link>
+                                 <Link to={item.url}> <span className="link" >{item.title}</span></Link>
                                 </span>
                             }
                             description={

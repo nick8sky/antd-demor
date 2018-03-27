@@ -9,7 +9,7 @@ class IDC extends Component {
                 <p>单机房一旦死机，断电、维护根本无法挽回整个数据，想离线读取等都不行。当一个机房不可用，所有的业务就都不可用。系统 要求业务离用户最近，南方的用户连南方的机房，北方的用户连北方的机房，国外的用户连国外的机房。大陆的网络和国外的网络有一定的隔离性，如果没有做多机房的连通性，数据的传输和实时性就会有问题。</p>
                 <p>&nbsp;</p>
                 <p>一个支付系统：</p>
-                <p><img src={require('../../img/7497cfece9ffdfacadf67f646a24dc1a7287510f.png')}  style={{height:"40%",width:"40%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m1/pay1.png"  style={{height:"40%",width:"40%"}}/></p>
                 <ol>
                     <li>通过域名做负载均衡，将请求路由到最近的可用服务的机房</li>
                     <li>服务全部机房内自治，不进行跨机房访问</li>
@@ -89,7 +89,7 @@ class IDC extends Component {
                 <hr />
                 <p> 比如说假设我们需要做一个“用户子系统”，这个子系统负责“注册”、“登录”、“用户信息”三个业务。为了支持海量用户，我们设计了一个“用户分区”的架构，即：正常情况下用户属于某个主分区，每个分区都有其它数据的备份，用户用邮箱或者手机号注册，路由层拿到邮箱或者手机号后，通过hash计算属于哪个中心，然后请求对应的业务中心。基本的架构如下： </p>
                 {/*<p><img src={require('../../img/9dd2bbb38e092fe164d082aa2bca252646281290.gif')}  style={{height:"80%",width:"80%"}}/></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/4b49284f5c35537a.gif"  style={{height:"80%",width:"80%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m1/9dd2bbb38e092fe164d082aa2bca252646281290.gif"  style={{height:"80%",width:"80%"}}/></p>
 
                     <p>考虑这样一个系统，如果3个业务要同时实现异地多活，我们会发现如下一些难以解决的问题：</p>
                 <p>【注册】</p>

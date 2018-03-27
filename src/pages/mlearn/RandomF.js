@@ -11,12 +11,12 @@ class RandomF extends Component {
                 <h3>随机决策树(decision tree)</h3>
                 <p>我们知道随机森林是将其他的模型进行聚合， 但具体是哪种模型呢？从其名称也可以看出，随机森林聚合的是分类（或回归） 树。一颗决策树是由一系列的决策组合而成的，可用于数据集的观测值进行分类 。</p>
                {/* <p><img src={require('../../img/3129325-d9a81dbdaa0155d0.png')} style={{height:"60%",width:"60%"}}/></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/193f1ccf2daafdc3.png" style={{height:"60%",width:"60%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/3129325-d9a81dbdaa0155d0.png" style={{height:"60%",width:"60%"}}/></p>
                 <p>引入的随机森林算法将自动创建随机决策树群。由于这些树是随机生成的，大部分的树(甚至 99.9%)对解决你的分类或回归问题是没有有意义。</p>
                 <h3>投票</h3>
                 <p>那么，生成甚至上万的糟糕的模型有什么好处呢？好吧，这确实没有。但有用的是，少数非常好的决策树也随之一起生成了。</p>
                 <p>简单来说，99.9%不相关的树做出的预测结果涵盖所有的情况，这些预测结果将会彼此抵消。少数优秀的树的预测结果将会脱颖而出，从而得到一个好的预测结果。</p>
-                <p><img src={require('../../img/3129325-b67e8fb7b448a0f0.png')} style={{height:"20%",width:"20%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/3129325-b67e8fb7b448a0f0.png" style={{height:"20%",width:"20%"}}/></p>
 
                 <p>性能制约</p>
                 <p>​	1. 森林中的每个树越茂盛，分类效果就越好。</p>

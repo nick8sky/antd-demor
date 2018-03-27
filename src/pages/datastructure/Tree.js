@@ -11,13 +11,13 @@ class Tree extends Component {
                 <p><strong>二叉树的定义：</strong>二叉树的每个结点至多只有二棵子树(不存在度大于2的结点)，二叉树的子树有左右之分，次序不能颠倒。二叉树的第i层至多有2^(i-1)个结点；深度为k的二叉树至多有2^(k-1)个结点；</p>
                 <p>二叉树的示例：</p>
                 {/*<p><img src={require('../../img/bc42d6b7087d92bf57edac612206395f.jpg')} /></p>*/}
-                <p><img src=" http://i4.bvimg.com/633340/571cb9c6dc708478.jpg" /></p>
+                <p><img src="https://thumbnail0.baidupcs.com/thumbnail/d0daab79571cb9c6dc708478bbaf551a?fid=940423185-250528-290355754908802&time=1520078400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-rKgnvUseCJlg46yGkQPda%2BL0qmg%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1434099732739169397&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" /></p>
 
                 <p><strong>满二叉树和完全二叉树：</strong></p>
                 <p>满二叉树：除最后一层无任何子节点外，每一层上的所有结点都有两个子结点。也可以这样理解，除叶子结点外的所有结点均有两个子结点。节点数达到最大值，所有叶子结点必须在同一层上。</p>
                 <p>完全二叉树：若设二叉树的深度为h，除第 h 层外，其它各层 (1～(h-1)层) 的结点数都达到最大个数，第h层所有的结点都连续集中在最左边，这就是完全二叉树。</p>
                {/* <p><img src={require('../../img/a5952ec741b60202c7b377bfb8e8f368.png')} /></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/8b4cdc06b886c2df.png" /></p>
+                <p><img src="https://thumbnail0.baidupcs.com/thumbnail/90b34d998b4cdc06b886c2dfec7ff615?fid=940423185-250528-454952733460965&time=1520078400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-EuQsFGo2YFUQgFX5nW84eCFmYPM%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1434110188819909552&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" /></p>
 
                 <h4>二叉查找树</h4>
                 <p>二叉查找树定义：又称为是二叉排序树（Binary Sort Tree）或二叉搜索树。二叉排序具有下列性质：</p>
@@ -40,10 +40,10 @@ class Tree extends Component {
                 <p>只需要经过一次旋转就可以达到目标，我们称之为单旋转，需要进行两次旋转达到目标，我们称之为双旋转。</p>
                 <p><strong>单旋转</strong></p>
                 <p>单旋转是针对于左左和右右这两种情况的解决方案，这两种情况是对称的，只要解决了左左这种情况，右右就很好办了。图3是左左情况的解决方案，节点k2不满足平衡特性，因为它的左子树k1比右子树Z深2层，而且k1子树中，更深的一层的是k1的左子树X子树，所以属于左左情况：</p>
-                <p><img src={require('../../img/61ee0c83b3783cb05eac2ed3528eae3b.jpg')} /></p>
+                <p><img src="https://thumbnail0.baidupcs.com/thumbnail/f396575bebd9325759c3d8864fde96f1?fid=940423185-250528-422616645050663&time=1520078400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-BNR6AcFNUpAAMDIEGsUcxl%2BSodM%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1434117102406950074&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" /></p>
                 <p><strong>双旋转</strong></p>
                 <p>对于左右和右左这两种情况，单旋转不能使它达到一个平衡状态，要经过两次旋转。双旋转是针对于这两种情况的解决方案，同样的，这样两种情况也是对称的，只要解决了左右这种情况，右左就很好办了。图4是左右情况的解决方案，节点k3不满足平衡特性，因为它的左子树k1比右子树Z深2层，而且k1子树中，更深的一层的是k1的右子树k2子树，所以属于左右情况。</p>
-                <p><img src={require('../../img/2ad609dadbff982036a8e32c792436d7.jpg')} /></p>
+                <p><img src="https://thumbnail0.baidupcs.com/thumbnail/cd3641c64bd3f293152c9b9b1ddd6170?fid=940423185-250528-797521687405709&time=1520078400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-E57v4QUQSIATt91BtfsWtVrA%2FbI%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1434124325622417077&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" /></p>
                 <h4>红黑树</h4>
                 <p> 红黑树和AVL树一样都对插入时间、删除时间和查找时间提供了最好可能的最坏情况担保。</p>
                 <p><strong>红黑树的性质：</strong></p>
@@ -54,7 +54,7 @@ class Tree extends Component {
                 <p>4） 每个红色节点必须有两个黑色的子节点。(从每个叶子到根的所有路径上不能有两个连续的红色节点。)</p>
                 <p>5） 从任一节点到其每个叶子的所有简单路径都包含相同数目的黑色节点。</p>
                 {/*<p><img src={require('../../img/9fd5e683147961431e0ecfcffbe5805b.png')} /></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/c8f061a4dab5e6af.png" /></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/9fd5e683147961431e0ecfcffbe5805b.png" /></p>
                 <p>这些约束确保了红黑树的关键特性: 从根到叶子的最长的可能路径不多于最短的可能路径的两倍长。结果是这个树大致上是平衡的。因为操作比如插入、删除和查找某个值的最坏情况时间都要求与树的高度成比例，这个在高度上的理论上限允许红黑树在最坏情况下都是高效的，而不同于普通的二叉查找树。</p>
                 <p>要知道为什么这些性质确保了这个结果，注意到性质4导致了路径不能有两个毗连的红色节点就足够了。最短的可能路径都是黑色节点，最长的可能路径有交替的红色和黑色节点。因为根据性质5所有最长的路径都有相同数目的黑色节点，这就表明了没有路径能多于任何其他路径的两倍长。</p>
                 <p>红黑树的自平衡操作(插入，删除)，比较复杂不做细讲。</p>

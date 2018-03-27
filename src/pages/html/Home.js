@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { Progress ,Calendar} from 'antd';
+import {  Calendar} from 'antd';
+
+
+
 
 class Home extends React.Component {
     state = {
 
         d: 0,
+
 
     }
     increase = () => {
@@ -24,11 +28,15 @@ class Home extends React.Component {
     render() {
         return (
             <div >
+
+
                 {/*<Progress   percent={this.state.d} status="active"/>*/}
                 <p>&nbsp;</p>
                     <div style={{ width: 500, border: '1px solid #d9d9d9', borderRadius: 4,marginLeft:"auto",marginRight:"auto" }}>
-                    <Calendar fullscreen={false}   />
+                    <Calendar fullscreen={false}    />
                 </div>
+
+
                 <p>&nbsp;</p>
             </div>
         );

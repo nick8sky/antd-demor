@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Markdown  from 'react-markdown';
 
 
 
@@ -9,8 +9,12 @@ class React1 extends Component {
 
         return (
             <div>
-                <h2>React使用命令</h2>
 
+                <Markdown source={"```\n" +
+                "npm i\n" +
+                "npm start\n" +
+                "npm run build\n" +
+                "```"}/>
 
 
 

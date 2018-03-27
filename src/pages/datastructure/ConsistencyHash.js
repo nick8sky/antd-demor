@@ -31,23 +31,23 @@ class ConsistencyHash extends Component {
                     Hash(NODE3) = KEY3;</p>
                 <p>可以看出对象与机器处于同一哈希空间中，这样按顺时针转动object1存储到了NODE1中，object3存储到了NODE2中，object2、object4存储到了NODE3中；</p>
                 {/*<p><img src={require('../../img/20160322101232331.png')} /></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/798b1a2257ee4383.png" /></p>
+                <p><img src="https://thumbnail0.baidupcs.com/thumbnail/45292594798b1a2257ee4383d986d3b5?fid=940423185-250528-505145053845828&time=1520074800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-8oKsISuYCI7clkhAbmOkTym0pC8%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1433973247800156011&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" /></p>
                 <p>在这样的部署环境中，hash环是不会变更的，因此，通过算出对象的hash值就能快速的定位到对应的机器中，这样就能找到对象真正的存储位置，但是还是有可能发生节点退出而不能命中的情况。</p>
                 <p><strong>节点（机器）的删除</strong>
                     以上面的分布为例，如果NODE2出现故障被删除了，那么按照顺时针迁移的方法，object3将会被迁移到NODE3中，这样仅仅是object3的映射位置发生了变化，其它的对象没有任何的改动。</p>
                 {/*<p><img src={require('../../img/20160322101236809.png')} /></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/605981515cfc4a6f.png" /></p>
+                <p><img src="https://thumbnail0.baidupcs.com/thumbnail/57a85d36605981515cfc4a6f5c449a80?fid=940423185-250528-684794214266455&time=1520074800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-aGMuaHSMtfrNWjCdbgWWc1CYjtI%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1433979595728959964&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" /></p>
                 <p><strong>节点（机器）的添加 </strong>
                     如果往集群中添加一个新的节点NODE4，通过对应的哈希算法得到KEY4，并映射到环中</p>
                 {/*<p><img src={require('../../img/20160322101240747.png')} /></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/2f18a593301b70bc.png"/></p>
+                <p><img src="https://thumbnail0.baidupcs.com/thumbnail/616d82842f18a593301b70bc1dd21808?fid=940423185-250528-889315242412385&time=1520074800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-YjizxKwjjPQYWdJ%2BbJYqjTBQM%2F0%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1433984555592688489&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video"/></p>
                 <p>通过按顺时针迁移的规则，那么object2被迁移到了NODE4中，其它对象还保持着原有的存储位置。
                     通过对节点的添加和删除的分析，一致性哈希算法在保持了单调性的同时，还是数据的迁移达到了最小，这样的算法对分布式集群来说是非常合适的，避免了大量数据迁移，减小了服务器的的压力。</p>
                 <p><strong>平衡性--虚拟节点</strong></p>
                 <p> 进行删除节点后，数据向后面一个节点滑移，造成后面节点的单点压力，如上面只部署了NODE1和NODE3的情况（NODE2被删除的图），object1存储到了NODE1中，而object2、object3、object4都存储到了NODE3中，这样就照成了非常不平衡的状态。在一致性哈希算法中，为了尽可能的满足平衡性，其引入了虚拟节点。</p>
                 <p> 以上面只部署了NODE1和NODE3的情况（NODE2被删除的图）为例，之前的对象在机器上的分布很不均衡，现在我们以2个副本（复制个数）为例，这样整个hash环中就存在了4个虚拟节点，最后对象映射的关系图如下：</p>
                 {/*<p><img src={require('../../img/6236798-6d94f9a40a9be1f5.png')} /></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/8a30f7928044ad57.png" /></p>
+                <p><img src="https://thumbnail0.baidupcs.com/thumbnail/36aa0a898a30f7928044ad572accf09e?fid=940423185-250528-879048469360895&time=1520074800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-4EobO0aVSa6vY4kXpwrVT4IaTTQ%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1433990766677949838&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" /></p>
                 <p>引入“虚拟节点”后，计算“虚拟节”点NODE1-1和NODE1-2的hash值：
                     Hash(“192.168.1.100#1”); // NODE1-1
                     Hash(“192.168.1.100#2”); // NODE1-2</p>

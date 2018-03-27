@@ -21,7 +21,7 @@ class HashTable extends Component {
                 <p>　　2.链地址法</p>
                 <p>	如果遇到冲突，他就会在原地址新建一个空间，然后以链表结点的形式插入到该空间。业界上用的最多的就是链地址法。可以很清晰明了反应下面的结构。比如说我有一堆数据[1,12,26,337,353...]，而我的哈希算法是H(key)=key mod 16，第一个数据1的哈希值f(1)=1，插入到1结点的后面，第二个数据12的哈希值f(12)=12，插入到12结点，第三个数据26的哈希值f(26)=10，插入到10结点后面，第4个数据337，计算得到哈希值是1，遇到冲突，但是依然只需要找到该1结点的最后链结点插入即可，同理353。</p>
                 {/*<p><img src={require('../../img/799055-20161226094432226-394173800.png')} /></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/c58ecfa685703ad3.png"/></p>
+                <p><img src="https://thumbnail0.baidupcs.com/thumbnail/350a989ec58ecfa685703ad3fa057be6?fid=940423185-250528-591682781917245&time=1520074800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-xj2Ii6m6vJQzHW5BNfV9cRouZqw%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1433802913196903650&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video"/></p>
                 <p>	由于哈希表高效的特性，查找或者插入的情况在大多数情况下可以达到O(1)，时间主要花在计算hash上，当然也有最坏的情况就是hash值全都映射到同一个地址上，这样哈希表就会退化成链表，查找的时间复杂度变成O(n)，但是这种情况比较少，只要不要把hash计算的公式外漏出去并且有人故意攻击，一般也不会出现这种情况。</p>
                 <h4>拒绝服务攻击</h4>
                 <p>哈希表在大部分的Web应用框架上都有应用，我们对Web应用每次发起请求所提交的参数，Controller端都会将其存储在哈希表中供后台代码调用。比如在Asp.NET应用中，我们使用Request.Form[key]和Request.QueryString[key]的方式来获取客户端提交的参数，参数就是被存储在HashTable中的，我们传入参数名称作为Key，通过Hash函数转换成对应的Value的数组下标，然后Value值被返回。</p>

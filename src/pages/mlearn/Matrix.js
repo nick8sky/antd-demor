@@ -11,7 +11,7 @@ class Matrix extends Component {
             <div>
                 <p>推荐先观看视频  <a href='https://www.bilibili.com/video/av6731067/'>3Blue1Brown线性代数的本质</a>;</p>
                 <h4>向量</h4>
-                <p><img src={require('../../img/20171204223419436.png')} style={{height:'100px"',width:"200px"}} /></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/20171204223419436.png" style={{height:'100px"',width:"200px"}} /></p>
                 <h4>基&amp;空间</h4>
                 <p>两个三维向量张成的空间是过原点的平面。</p>
                 <p>如果第三个三维向量不与它们共面，当第三个三维向量缩放时，它将前两个向量张成的平面沿着它的方向来回移动，从而扫过整个空间。</p>
@@ -61,11 +61,11 @@ class Matrix extends Component {
                 <p>如果V和W的长度恰好相同，我们可以利用其中的对称性，两种投影互为镜像，若将其中一个缩放若干倍，对称性被破坏，但是被投影的向量长度保持不变。</p>
                 <p>(3,2)·(2,3) = 6+6 =12</p>
                 <p>点乘的几何意义是可以用来表征或计算两个向量之间的夹角，以及在b向量在a向量方向上的投影，有公式：</p>
-                <p><img src={require('../../img/20160902220238078.png')}  /></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/20160902220238078.png" /></p>
                 <p>推导过程如下，首先看一下向量组成：</p>
                 {/*<p><img src={require('../../img/20160902222630016.jpg')}/></p>*/}
 
-                <p><img src="http://i4.bvimg.com/633340/1981e98ed0cb1c5a.jpg"/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/20160902222630016.png"/></p>
                 <p>&nbsp;</p>
                 <p>根据三角形余弦定理有：</p>
                 <p><img src='http://img.blog.csdn.net/20160902222059055' alt='img' /></p>
@@ -85,7 +85,7 @@ class Matrix extends Component {
                 <p>在3D图像学中，叉乘的概念非常有用，可以通过两个向量的叉乘，生成第三个垂直于a，b的法向量，从而构建X、Y、Z坐标系。如下图所示：</p>
                 {/*<p><img src={require('../../img/20160902232814429.png')} /></p>*/}
 
-                <p><img src="http://i4.bvimg.com/633340/9e6c1fa92c43c0d9.png" /></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/20160902232814429.png" /></p>
                 <h4>特征向量</h4>
                 <p>对一个空间进行几何变换时，有一个向量不会随着变换而导致向量的方向发生变化。</p>
                 <p>&lt;未完&gt;</p>

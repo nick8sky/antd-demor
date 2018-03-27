@@ -23,19 +23,23 @@ class Fm extends Component {
                     One-Hot编码的另一个特点就是导致特征空间大。例如，商品品类有550维特征，一个categorical特征转换为550维数值特征，特征空间剧增。
                     同时通过观察大量的样本数据可以发现，某些特征经过关联之后，与label之间的相关性就会提高。例如，“USA”与“Thanksgiving”、“China”与“Chinese New Year”这样的关联特征，对用户的点击有着正向的影响。换句话说，来自“China”的用户很可能会在“Chinese New Year”有大量的浏览、购买行为，而在“Thanksgiving”却不会有特别的消费行为。这种关联特征与label的正向相关性在实际问题中是普遍 存在的，如“化妆品”类商品与“女”性，“球类运动配件”的商品与“男”性，“电影票”的商品与“电影”品类偏好等。因此，引入两个特征的组合是非常有意义的。</p>
                 <p>     一般的线性模型为：</p>
-                <p><img src={require('../../img/WX20180217-101256@2x.png')} style={{height:"20%",width:"20%"}}/></p>
+               {/* <p><img src={require('../../img/https://gitee.com/nick070809/pics/raw/master/m2/5e4d414cgw1evkbhudbyzj20n00brdhy.jpg')} style={{height:"20%",width:"20%"}}/></p>*/}
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/5e4d414cgw1evkbhudbyzj20n00brdhy.jpg" style={{height:"20%",width:"20%"}}/></p>
+
+
                 <p>对于度为2的因子分解机（FM）的模型为：</p>
-                <p><img src={require('../../img/WX20180217-101402@2x.png')} style={{height:"40%",width:"40%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/WX20180217-101256@2x.png" style={{height:"40%",width:"40%"}}/></p>
                 <p>v∈R<sup>n*k</sup> ， &lt;v<sub>i</sub>,v<sub>j</sub>> 表示的是两个大小为 k 的向量之间的点积： </p>
-                <p><img src={require('../../img/WX20180217-101523@2x.png')} style={{height:"25%",width:"25%"}}/></p>
+
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/WX20180217-101402@2x.png" style={{height:"25%",width:"25%"}}/></p>
                 <p>与线性模型相比，FM的模型就多了后面特征组合的部分，在基本线性回归模型的基础上引入交叉项；</p>
                 {/*<p><img src={require('../../img/WX20180217-101907@2x.png')} style={{height:"80%",width:"80%"}}/></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/6fc2fa56de78621a.png" style={{height:"80%",width:"80%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/WX20180217-101907@2x.png" style={{height:"80%",width:"80%"}}/></p>
                 <p>损失函数：</p>
                 {/*<p><img src={require('../../img/WX20180217-102105@2x.png')} style={{height:"50%",width:"50%"}}/></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/b27f541e2c97a08f.png" style={{height:"80%",width:"80%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/WX20180217-102105@2x.png" style={{height:"80%",width:"80%"}}/></p>
                {/* <p><img src={require('../../img/WX20180217-102211@2x.png')} style={{height:"60%",width:"60%"}}/></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/5121f587dfc60b71.png" style={{height:"80%",width:"80%"}}/></p>
+                <p><img src="https://gitee.com/nick070809/pics/raw/master/m2/WX20180217-102211@2x.png" style={{height:"80%",width:"80%"}}/></p>
                 <p>使用SGD比较常见。</p>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>

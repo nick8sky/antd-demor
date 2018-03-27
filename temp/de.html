@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>d.md</title></head>
+<body><p>三、同一台电脑设置多个公钥与不同GITHUB帐号交互:</p>
+<p>参考：<a href='https://jingyan.baidu.com/article/219f4bf7f6f8e1de442d3829.html' target='_blank' >https://jingyan.baidu.com/article/219f4bf7f6f8e1de442d3829.html</a></p>
+<p>制造第一把公钥：</p>
+<pre><code>ssh-keygen -t rsa -C &quot;skx@lianpay.com&quot;
+
+# 设置名称为id_rsa0
+
+制造第二把公钥：
+
+ssh-keygen -t rsa -C &quot;nick070809@163.com&quot;
+
+# 设置名称为id_rsa2
+
+制造第三把公钥：
+
+ssh-keygen -t rsa -C &quot;273034773@qq.com&quot;
+
+# 设置名称为id_rsa2
+
+</code></pre>
+<p>在.ssh目录下编辑config文件：</p>
+<pre><code>Host nick070809
+        HostName github.com
+        User git
+        IdentityFile /Users/sunkaixiang/.ssh/id_rsa3
+Host nick
+        HostName github.com
+        User git
+        IdentityFile /Users/sunkaixiang/.ssh/id_rsa2
+Host gitlab
+        HostName 47.96.157.114
+        User git
+        IdentityFile /Users/sunkaixiang/.ssh/id_rsa
+</code></pre>
+<p>对于nick帐号下的仓库克隆：</p>
+<pre><code>git clone nick:273034773/react.git
+
+(原地址是：git@github.com:273034773/react，替换后应该是：nick:273034773/react.git)
+
+</code></pre>
+<p>对于nick帐号下的新仓库本地获取：</p>
+<pre><code>git remote add origin nick:nick070809/vue.git
+</code></pre>
+<p> </p>
+</body>
+</html>

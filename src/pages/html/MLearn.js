@@ -160,6 +160,12 @@ const data = [
 class LoadMoreList extends React.Component {
     constructor(props) {
         super(props);
+        if(window.erred && window.erred > 3 && window.erred  < 6){
+            message.error('nick不欢迎你，请离开本网站');
+            window.erred = window.erred +1 ;
+        }else if(window.erred && window.erred > 5 ){
+            window.location.replace("http://news.baidu.com/")
+        }
         /*console.log(props);*/
         this.state = {
             loading: true,
@@ -171,13 +177,7 @@ class LoadMoreList extends React.Component {
             total :0,
             data: [],
         }
-        /*console.log(props);*/
-        const  q = props.location.search ;
-        if(q){
-            if(q =='?1989' || q== '?2018'){
-                window.needInput = 1 ;
-            }
-        }
+
     }
 
     pigeNum = 1;
@@ -289,13 +289,13 @@ class LoadMoreList extends React.Component {
         return (
             <div>
             <Modal
-                title="添加加微信好友,请注明github"
+                title="添加微信好友,请注明github"
                 visible={this.state.visible}
                 onOk={this.handleOk}
                 onCancel={this.handleCancel}
                 >
                 <p>
-                    <p><img src="http://i4.bvimg.com/633340/e057c3f6888bf1a5t.jpg" style={{height:"100%",width:"100%"}}/></p>
+                    <p><img src="https://gitee.com/nick070809/pics/raw/master/home/wx.png" style={{height:"100%",width:"100%"}}/></p>
                     <Input
                     placeholder="请输入图中的微信号或验证码"
                     prefix={<Icon type="question-circle-o" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -318,7 +318,7 @@ class LoadMoreList extends React.Component {
                             title={
                                 <span>
 
-                                 <Link to={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></Link>
+                                 <Link to={item.url}> <span className="link">{item.title}</span></Link>
                                 </span>
                             }
                             description={

@@ -1,5 +1,6 @@
 import {List, Button, Spin, Icon, Rate, Tag} from 'antd';
 import React from 'react';
+import {message} from "antd/lib/index";
 
 
 const data = [
@@ -46,15 +47,24 @@ const data = [
 
 
 class ResourceList extends React.Component {
-    state = {
-        loading: true,
-        loadingMore: false,
-        showLoadingMore: true,
-        remaining: 0,
-        total: 0,
-        data: [],
-    }
+    constructor(props) {
+        super(props);
+        if (window.erred && window.erred > 3 && window.erred  < 6) {
+            message.error('nick不欢迎你，请离开本网站');
+            window.erred = window.erred + 1;
+        } else if (window.erred && window.erred > 5) {
+            window.location.replace("http://news.baidu.com/")
+        }
+        this.state = {
+            loading: true,
+            loadingMore: false,
+            showLoadingMore: true,
+            remaining: 0,
+            total: 0,
+            data: [],
+        }
 
+    }
     pigeNum = 1;
 
 
@@ -136,7 +146,7 @@ class ResourceList extends React.Component {
                             title={
                                 <span>
 
-                                 <a href={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></a>
+                                 <a href={item.url}> <span className="link">{item.title}</span></a>
                                 </span>
                             }
                             description={item.description}

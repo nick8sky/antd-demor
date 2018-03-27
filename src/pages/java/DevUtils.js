@@ -4,14 +4,13 @@ import Git from './Git';
 import Maven from './Maven';
 import Linux from './Linux';
 import React1 from './React1';
-
+import MarkDown from "./MarkDown";
+import Mysql from "./Mysql";
+import PostMan from "./PostMan";
+import Docker from "./Docker";
 
 const Panel = Collapse.Panel;
-const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
+
 
 
 
@@ -33,8 +32,20 @@ class DevUtils extends Component {
                     <Panel header="Linux 使用命令">
                         <p><Linux/></p>
                     </Panel>
-                    <Panel header="React 使用命令">
+                    <Panel header="Node 使用命令">
                         <p><React1/></p>
+                    </Panel>
+                    <Panel header="MarkDown 使用命令">
+                        <p><MarkDown/></p>
+                    </Panel>
+                    <Panel header="Mysql 使用命令">
+                        <p><Mysql/></p>
+                    </Panel>
+                    <Panel header="postman 使用命令">
+                        <p><PostMan/></p>
+                    </Panel>
+                    <Panel header="docker 使用命令">
+                        <p><Docker/></p>
                     </Panel>
                 </Collapse>
             </div>

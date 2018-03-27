@@ -22,7 +22,7 @@ class ComplexityAnalysis extends Component {
                 <p>求二分法的时间复杂度和空间复杂度：</p>
                 <p>栈内处理</p>
                {/* <p><img src={require('../../img/20160906202802828.jpg')} /></p>*/}
-                <p><img src="http://i4.bvimg.com/633340/f5440801f726df35.png" /></p>
+                <p><img src="https://thumbnail0.baidupcs.com/thumbnail/85c01773f5440801f726df357f4fed6f?fid=940423185-250528-1076150003852900&time=1520074800&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-HZDbMwLAAvKzBciIbjzMU9pNcZ4%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1433954520865757381&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" /></p>
                 <p>时间复杂度是O(log2 N);</p>
                 <p>由于辅助空间是常数级别的所以：</p>
                 <p>空间复杂度是O(1);</p>

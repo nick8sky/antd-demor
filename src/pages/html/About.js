@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import {Icon,Timeline} from 'antd'
+import {message} from "antd/lib/index";
 
 
 
 
 class About extends Component {
+    constructor(props) {
+        super(props);
+        if(window.erred && window.erred > 3 && window.erred  < 6){
+            message.error('nick不欢迎你，请离开本网站');
+            window.erred = window.erred +1 ;
+        }else if(window.erred && window.erred > 5 ){
+            window.location.replace("http://news.baidu.com/")
+        }
+    }
     render() {
         return (
             <div>
                 <p>发邮件给我 <Icon type="mail" style={{ marginRight: 8 }} />nick070809@163.com</p>
-                <p>坐     标 <Icon type="compass" style={{ marginRight: 8 }} />杭州·中国</p>
+                <p>坐     标 <Icon type="environment-o" style={{ marginRight: 8 }} />杭州·中国</p>
                 <p>能     力 <Icon type="dashboard" style={{ marginRight: 8 }} />java /python /scala /mysql /oracle /react</p>
-                <p>最     近 <Icon type="coffee" style={{ marginRight: 8 }} />在学习c++,kotlin</p>
+                <p>最     近 <Icon type="instagram" style={{ marginRight: 8 }} />在学习c++,kotlin</p>
                 <p>&nbsp;</p>
                 <Timeline>
                     <Timeline.Item color="green">杭州-2016</Timeline.Item>

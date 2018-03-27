@@ -5,7 +5,24 @@ import {Link} from 'react-router-dom';
 
 
 const data = [
-
+    {
+        "title": "VPN搭建",
+        "description": "VPN搭建。",
+        "url": "vpn",
+        "mi": 1.0,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-21"
+    },
+    {
+        "title": "内容分发网络 Content Delivery Network",
+        "description": "假设有一位身处陕西西安的用户想要访问某网站www.xxxcom提供的服务，这个网站的服务器部署在北京市，那么这个用户发送的请求需要跨过陕西省、山西省、河北省最终才能到达北京市。",
+        "url": "cdn",
+        "mi": 4.0,
+        "typeColor": "cyan",
+        "typeName": "Tcp/Ip",
+        "updateTime": "2018-02-21"
+    },
     {
         "title": "传输控制协议",
         "description": "TCP是一个面向连接的协议。无论哪一方向另一方发送数据之前，都必须先在双方之间建立一条连接。本章将详细讨论一个TCP连接是如何建立的以及通信结束后是如何终止的。",
@@ -133,6 +150,12 @@ const data = [
 class LoadMoreList extends React.Component {
     constructor(props) {
         super(props);
+        if(window.erred && window.erred > 3 && window.erred  < 6){
+            message.error('nick不欢迎你，请离开本网站');
+            window.erred = window.erred +1 ;
+        }else if(window.erred && window.erred > 5 ){
+            window.location.replace("http://news.baidu.com/")
+        }
         /*console.log(props);*/
         this.state = {
             loading: true,
@@ -144,13 +167,7 @@ class LoadMoreList extends React.Component {
             total :0,
             data: [],
         }
-        /*console.log(props);*/
-        const  q = props.location.search ;
-        if(q){
-            if(q =='?1989' || q== '?2018'){
-                window.needInput = 1 ;
-            }
-        }
+
     }
 
     pigeNum = 1;
@@ -262,13 +279,13 @@ class LoadMoreList extends React.Component {
         return (
             <div>
             <Modal
-                title="添加加微信好友,请注明github"
+                title="添加微信好友,请注明github"
                 visible={this.state.visible}
                 onOk={this.handleOk}
                 onCancel={this.handleCancel}
                 >
                 <p>
-                    <p><img src="http://i4.bvimg.com/633340/e057c3f6888bf1a5t.jpg" style={{height:"100%",width:"100%"}}/></p>
+                    <p><img src="https://gitee.com/nick070809/pics/raw/master/home/wx.png" style={{height:"100%",width:"100%"}}/></p>
                     <Input
                     placeholder="请输入图中的微信号或验证码"
                     prefix={<Icon type="question-circle-o" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -291,7 +308,7 @@ class LoadMoreList extends React.Component {
                             title={
                                 <span>
 
-                                 <Link to={item.url}> <span style={{fontSize: '20px'}}>{item.title}</span></Link>
+                                 <Link to={item.url}> <span className="link">{item.title}</span></Link>
                                 </span>
                             }
                             description={
