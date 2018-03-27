@@ -28,7 +28,7 @@ class ASK10 extends Component {
                         <p>但是，如果CPU资源很少，比如只有两个的时候怎么办？按照上面的公式，CMS会启动1个GC线程。相当于GC线程占用了50%的CPU资源，这就可能导致用户程序的执行速度忽然降低了50%，还是很明显的能感知的。</p>
                         <p>&nbsp;</p>
                         <p>CMS将老年代的空间分成大小为512bytes的块，card table中的每个元素对应着一个块。并发标记时，如果某个对象的引用发生了变化，就标记该对象所在的块为  <strong>dirty card</strong>。并发预清理阶段就会重新扫描该块，将该对象引用的对象标识为可达。</p>
-                        <p><img src={require('../../imgs/skill/cms2.png' )}/></p>
+                        <p><img src={require('../../../imgs/skill/cms2.png' )}/></p>
                         <p><strong>current obj所在的块被标记为了dirty card。</strong></p>
                         <p> </p>
                         <h3 id="触发阈值"><a href="javascript:void(0)" class="anchor">触发阈值</a></h3>
@@ -63,7 +63,7 @@ class ASK10 extends Component {
                         <h3 id="后备收集器：SerialOld"><a href="javascript:void(0)" class="anchor">后备收集器：SerialOld</a></h3>
                         <p>并发GC，吞吐量下降，采用标记清除，碎片多，占用额外内存，不能在堆空间满时清理，触发GC：
                             清理时，应用程序还在运行此时如果预留的空间不够应用程序申请的空间的话，则会触发Concurrent Mode Fail，此时便会启用后备收集器：SerialOld进行GC，产生全局停顿</p>
-                        <p><img src={require('../../imgs/skill/cms3.png' )}/></p>
+                        <p><img src={require('../../../imgs/skill/cms3.png' )}/></p>
                         <p>Serial Old收集器是JAVA虚拟机中垃圾收集器的一种,它是Serial收集器的老年代版本，它同样是一个单线程收集器，使用“标记-整理”算法。如果CMS收集器出现Concurrent Mode Failure，则Serial Old收集器将作为后备收集器。</p>
                         <p>&nbsp;</p>
                         <h2 id="CMS缺点"><a href="javascript:void(0)" class="anchor">CMS缺点</a></h2>
@@ -79,7 +79,7 @@ class ASK10 extends Component {
                         <p>&nbsp;</p>
                         <p>问：如何确定老年代的对象是活着的？</p>
                         <p>答：通过GC ROOT TRACING可到达的对象就是活着的。</p>
-                        <p><img src={require('../../imgs/skill/cms1.png' )}/></p>
+                        <p><img src={require('../../../imgs/skill/cms1.png' )}/></p>
                         <p>CMS虽然是老年代的gc，但仍要扫描新生代。</p>
                         <h2 id="垃圾收集算法"><a href="javascript:void(0)" class="anchor">垃圾收集算法</a></h2>
                         <h3 id="复制-整理"><a href="javascript:void(0)" class="anchor">复制-整理</a></h3>
@@ -91,11 +91,11 @@ class ASK10 extends Component {
                         <p>实现简单，内存效率高，不易产生碎片，但需要多一块内存。</p>
                         <h3 id="标记-清理"><a href="javascript:void(0)" class="anchor">标记-清理</a></h3>
                         <p>分为两个阶段，标注和清除。标记阶段标记出所有需要回收的对象，清除阶段回收被标记的对象所占用的空间。</p>
-                        <p><img src={require('../../imgs/skill/cms4.jpg' )}/></p>
+                        <p><img src={require('../../../imgs/skill/cms4.jpg' )}/></p>
                         <p>该算法最大的问题是内存碎片化严重，后续可能发生大对象不能找到可利用空间的问题。</p>
                         <h3 id="标记-压缩(整理)"><a href="javascript:void(0)" class="anchor">标记-压缩(整理)</a></h3>
                         <p>标记阶段和Mark-Sweep算法相同，标记后不是清理对象，而是将存活对象移向内存的一端。然后清除端边界外的对象。</p>
-                        <p><img src={require('../../imgs/skill/cms5.jpg' )}/></p>
+                        <p><img src={require('../../../imgs/skill/cms5.jpg' )}/></p>
                         <h3 id="分代收集算法"><a href="javascript:void(0)" class="anchor">分代收集算法</a></h3>
                         <p>分代收集法是目前大部分JVM所采用的方法，其核心思想是根据对象存活的不同生命周期将内存划分为不同的域，一般情况下将GC堆划分为老生代(Tenured/Old Generation)和新生代(Young Generation)。老生代的特点是每次垃圾回收时只有少量对象需要被回收，新生代的特点是每次垃圾回收时都有大量垃圾需要被回收，因此可以根据不同区域选择不同的算法。</p>
                         <p> 对于新生代都采取Copying算法，而老生代因为每次只回收少量对象，因而采用Mark-Compact算法。对永生代的回收主要包括废弃常量和无用的类。</p>
