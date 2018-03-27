@@ -789,6 +789,19 @@ const ASK11 = (props) => (
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
+const ASK12 = (props) => (
+    <Bundle load={() => import('./pages/skill/java/ASK12')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+const ASK13 = (props) => (
+    <Bundle load={() => import('./pages/skill/java/ASK13')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
+
+
+
 const ASKDesign1 = (props) => (
     <Bundle load={() => import('./pages/skill/design/D1')}>
         {(Chat) => <Chat {...props}/>}
@@ -1079,6 +1092,9 @@ class App extends Component {
                                     <Route component={ASK9} exact strict path="/ask9"/>
                                     <Route component={ASK10} exact strict path="/ask10"/>
                                     <Route component={ASK11} exact strict path="/ask11"/>
+                                    <Route component={ASK12} exact strict path="/ask12"/>
+                                    <Route component={ASK13} exact strict path="/ask13"/>
+
 
                                     <Route component={ASKDesign1} exact strict path="/askdesign1"/>
                                     {/*---------------------------------------*/}

@@ -134,6 +134,16 @@ const data = [
         "typeName": "面试宝典",
         "updateTime": "2018-03-27"
     }
+    ,
+    {
+        "title": "hashmap再深入理解？",
+        "description": "以为理解的可以了，还有一些我不知道的",
+        "url": "ask13",
+        "mi": 3.0,
+        "typeColor": "cyan",
+        "typeName": "面试宝典",
+        "updateTime": "2018-03-27"
+    }
 ]
 
 
