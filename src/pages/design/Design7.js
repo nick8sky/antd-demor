@@ -5,7 +5,7 @@ import {Anchor, Row, Col} from 'antd';
 
 
 
-class Design6 extends Component {
+class Design7 extends Component {
 
 
     render() {
@@ -53,4 +53,4 @@ class Design6 extends Component {
     }
 }
 
-export default Design6;
+export default Design7;

@@ -59,7 +59,15 @@ const data = [
         "typeName": "设计",
         "updateTime": "2018-03-25"
     }
-
+    ,
+    {
+        "title": "实时报表设计",
+        "url": "design7",
+        "mi": 3,
+        "typeColor": "cyan",
+        "typeName": "设计",
+        "updateTime": "2018-03-25"
+    }
     ,
     {
         "title": "tomcat容器设计",
