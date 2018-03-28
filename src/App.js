@@ -799,7 +799,11 @@ const ASK13 = (props) => (
         {(Chat) => <Chat {...props}/>}
     </Bundle>
 );
-
+const ASK14 = (props) => (
+    <Bundle load={() => import('./pages/skill/java/ASK14')}>
+        {(Chat) => <Chat {...props}/>}
+    </Bundle>
+);
 
 
 const ASKDesign1 = (props) => (
@@ -1094,6 +1098,7 @@ class App extends Component {
                                     <Route component={ASK11} exact strict path="/ask11"/>
                                     <Route component={ASK12} exact strict path="/ask12"/>
                                     <Route component={ASK13} exact strict path="/ask13"/>
+                                    <Route component={ASK14} exact strict path="/ask14"/>
 
 
                                     <Route component={ASKDesign1} exact strict path="/askdesign1"/>

@@ -136,9 +136,19 @@ const data = [
     }
     ,
     {
-        "title": "hashmap再深入理解？",
-        "description": "以为理解的可以了，还有一些我不知道的",
+        "title": "redis的watch机制和事务？",
+        "description": "zk通过node目录进行监控，redis通过对key值变化进行监控，实现zk watch一样的操作",
         "url": "ask13",
+        "mi": 3.0,
+        "typeColor": "cyan",
+        "typeName": "面试宝典",
+        "updateTime": "2018-03-28"
+    }
+    ,
+    {
+        "title": "hashmap再深入理解？",
+        "description": "还以为理解够可以了，还有一些是我不知道的",
+        "url": "ask14",
         "mi": 3.0,
         "typeColor": "cyan",
         "typeName": "面试宝典",
